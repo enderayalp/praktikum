@@ -8,8 +8,10 @@ import { Component, OnInit ,Input} from '@angular/core';
 export class BarComponent implements OnInit {
    wieOft: number = 1;
    text: string = 'ich komme aus der componente';
-//   @Input() myurl:string;
-  constructor() { }
+   @Input() myurl: string;
+  constructor() {
+    this.myurl = ''
+  }
 
   ngOnInit(): void {
 
