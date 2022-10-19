@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'bar-component',
@@ -7,9 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./bar.component.css']
 })
 export class BarComponent implements OnInit {
-  wieOft: number = 1;
-   text: string = '';     //   text: string = 'ich komme aus der componente';
-  formData = {
+  text: string = '';     //   text: string = 'ich komme aus der componente';
+  formDataBar = {
     vorname: '',
     nachname: '',
     addresse: '',
@@ -18,17 +17,16 @@ export class BarComponent implements OnInit {
   }
   @Input() myurl: string;
 
-show:boolean;
+  show: boolean = false;
 //   constructor() {
 //     this.myurl = ''
 //   }
 
 
-  constructor(private router: Router){
-  this.myurl = ''
+  constructor(private router: Router) {
+    this.myurl = ''
 
   }
-
 
 
   ngOnInit(): void {
@@ -47,11 +45,8 @@ show:boolean;
 //   }
 
   click() {
-    this.text = 'ich komme aus der componente und wurde veraendert ' + this.wieOft++;
+    this.show = !this.show;
   }
 
-  click2(meinText: string) {
-    this.text = 'ich komme aus der componente und wurde veraendert ' + this.wieOft++ + ' ' + meinText;
-  }
 
 }

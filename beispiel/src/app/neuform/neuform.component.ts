@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'neuform',
@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./neuform.component.css']
 })
 export class NeuformComponent implements OnInit {
+  @Input() formDataNeu = {
+    vorname: '',
+    nachname: '',
+    addresse: '',
+    email: '',
+    password: ''
+  }
 
   constructor() { }
 
