@@ -1,18 +1,47 @@
 
 <p>{{text}}</p>
 
-<button (click)="click()">Click</button>
+<!--<button (click)="click()">Click</button>-->
 
-<button (click)="click2('hallo')">Click</button>
+<!--<button (click)="click2('hallo')">Click</button> <br>-->
 
-<a [href]="myurl">my link</a>
+<!--<a [href]="myurl">my link</a><br>-->
 
-<label> benutzername</label>
-<input [(ngModel)]="formData.username" type="text" name="username">
+<!--<label> benutzername</label>-->
+<!--<input [(ngModel)]="formData.username" type="text" name="username"> <br>-->
 
-<label> passwort</label>
-<input [(ngModel)]="formData.username" type="text" name="password">
+<!--<label> passwort</label>-->
+<!--<input [(ngModel)]="formData.username" type="text" name="password">-->
 
-<label [textContent]="formData.username"></label>
+<!--<label [textContent]="formData.username"></label>-->
 
-<h1>BURASIDA Bar componente ait</h1>
+
+<label> Vorname:     </label>
+<input [(ngModel)]="formData.vorname" type="text" name="vorname" class="bir" align="left"> <br>
+
+<label> Nachname: </label>
+<input [(ngModel)]="formData.nachname" type="text" name="nachname" class="bir"> <br>
+
+<label> Addresse: </label>
+<input [(ngModel)]="formData.addresse" type="text" name="addresse" class="bir"> <br>
+
+<label> E-Mail:</label>
+<input [(ngModel)]="formData.email" type="email" name="email" class="bir"> <br>
+
+<label> Password: </label>
+<input [(ngModel)]="formData.password" type="password" name="password" class="bir"> <br>  <br>
+
+  <button>Save</button>
+
+<a [href]="myurl">my link</a><br>
+
+
+<neuform *ngIf="show"></neuform>
+
+
+
+<!--<h1>BURASIDA Bar componente ait</h1>-->
+<!--<div>-->
+<!--  <a routerLink="/neuform">Go NeuForm</a>-->
+<!--  <button (click)="onneuformClick()"></button>-->
+<!--</div>-->

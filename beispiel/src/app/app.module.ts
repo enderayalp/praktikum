@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BarComponent } from './bar/bar.component';
 import {FormsModule} from "@angular/forms";
+import { NeuformComponent } from './neuform/neuform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BarComponent
+    BarComponent,
+    NeuformComponent
   ],
   imports: [
     BrowserModule,
