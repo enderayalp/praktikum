@@ -6,8 +6,12 @@ import {Router} from '@angular/router';
   templateUrl: './bar.component.html',
   styleUrls: ['./bar.component.css']
 })
+
+
 export class BarComponent implements OnInit {
+
   text: string = '';     //   text: string = 'ich komme aus der componente';
+
   formDataBar = {
     vorname: '',
     nachname: '',
@@ -15,31 +19,16 @@ export class BarComponent implements OnInit {
     email: '',
     password: ''
   }
-  @Input() myurl: string;
+
+  @Input()     // myurl: string;
 
   show: boolean = false;
+
 //   constructor() {
 //     this.myurl = ''
 //   }
 
-
-  constructor(private router: Router) {
-    this.myurl = ''
-
-  }
-
-
-  ngOnInit(): void {
-
-  }
-
-//     constructor(private router: Router){}
-//     goToPage(pageName:string):void{
-//     this.router.navigate([`${pageName}`]);
-//     }
-//   }
-
-
+  ngOnInit(): void {}
 //   click(){
 //   this.button =
 //   }
@@ -47,6 +36,4 @@ export class BarComponent implements OnInit {
   click() {
     this.show = !this.show;
   }
-
-
 }

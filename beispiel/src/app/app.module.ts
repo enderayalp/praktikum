@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { BarComponent } from './bar/bar.component';
 import {FormsModule} from "@angular/forms";
 import { NeuformComponent } from './neuform/neuform.component';
+import { AutoComponent } from './auto/auto.component';
+import { ListeleComponent } from './listele/listele.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BarComponent,
-    NeuformComponent
+    NeuformComponent,
+    AutoComponent,
+    ListeleComponent
   ],
   imports: [
     BrowserModule,

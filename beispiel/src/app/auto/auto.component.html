@@ -1,0 +1,31 @@
+<p>Auto Component</p>
+<label>Model: </label>
+<input [(ngModel)]="formAuto.model"> <br>
+
+<label>Marke: </label>
+<input [(ngModel)]="formAuto.marke"> <br>
+
+<label>Erstzulassung: </label>
+<input [(ngModel)]="formAuto.erstzulassung"> <br>
+
+<label>Kilometer: </label>
+<input [(ngModel)]="formAuto.kilometer"> <br>
+
+<label>Kraftstoffart: </label>
+<input [(ngModel)]="formAuto.kraftstoffart"> <br>
+
+<label>Fahrzeugtyp: </label>
+<input [(ngModel)]="formAuto.fahrzeugtyp"> <br> <br>
+
+
+
+<listele-component *ngIf="show" [formListele]="formAuto"> </listele-component> <br>
+
+<button (click)="click()">Show</button>
+
+
+
+
+
+
+

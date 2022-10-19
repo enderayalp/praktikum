@@ -6,7 +6,10 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./neuform.component.css']
 })
 export class NeuformComponent implements OnInit {
-  @Input() formDataNeu = {
+
+@Input()
+
+  formDataNeu = {
     vorname: '',
     nachname: '',
     addresse: '',
@@ -14,7 +17,13 @@ export class NeuformComponent implements OnInit {
     password: ''
   }
 
+
+
+
+
+
   constructor() { }
+
 
   ngOnInit(): void {
   }
