@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Auto} from "../auto/auto.component";
 
 @Component({
   selector: 'listele-component',
@@ -6,20 +7,32 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./listele.component.css']
 })
 export class ListeleComponent implements OnInit {
-
-@Input ()
-
-formListele ={
+@Input () auto: Auto ={
 marke: '',
 model: '',
 erstzulassung: '',
 kilometer: '',
 kraftstoffart:'',
 fahrzeugtyp:'',
-
 }
 
+@Output() autoUpdateEvent = new EventEmitter<Auto>;
+
+  auto2: Auto ={
+    marke: '',
+    model: '',
+    erstzulassung: '',
+    kilometer: '',
+    kraftstoffart:'',
+    fahrzeugtyp:'',
+  }
+
+
   constructor() { }
+
+  changeAuto(auto: Auto){
+    this.autoUpdateEvent.emit(auto);
+  }
 
   ngOnInit(): void {
   }

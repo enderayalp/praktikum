@@ -17,11 +17,11 @@
 <label>Fahrzeugtyp: </label>
 <input [(ngModel)]="formAuto.fahrzeugtyp"> <br> <br>
 
-
-
-<listele-component *ngIf="show" [formListele]="formAuto"> </listele-component> <br>
-
 <button (click)="click()">Show</button>
+
+<listele-component (autoUpdateEvent)="changeFormAuto($event)" *ngIf="show" [auto]="formAuto"> </listele-component> <br>
+
+
 
 
 

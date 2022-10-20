@@ -1,15 +1,23 @@
 <p>Listele Component</p>
 
-<label> Model: {{formListele.model}} </label> <br>
+<label> Model: {{auto.model}} </label> <br>
+<input [(ngModel)]="auto2.model"> <br>
 
-<label> Marke: {{formListele.marke}} </label> <br>
+<label> Marke: {{auto.marke}} </label> <br>
+<input [(ngModel)]="auto2.marke"> <br>
 
-<label> Erstzulassung: {{formListele.erstzulassung}} </label> <br>
+<label> Erstzulassung: {{auto.erstzulassung}} </label> <br>
+<input [(ngModel)]="auto2.erstzulassung"> <br>
 
-<label> Kilometer: {{formListele.kilometer}} </label> <br>
+<label> Kilometer: {{auto.kilometer}} </label> <br>
+<input [(ngModel)]="auto2.kilometer"> <br>
 
-<label> Kraftstoffart: {{formListele.kraftstoffart}} </label> <br>
+<label> Kraftstoffart: {{auto.kraftstoffart}} </label> <br>
+<input [(ngModel)]="auto2.kraftstoffart"> <br>
 
-<label> Fahrzeugtyp: {{formListele.fahrzeugtyp}} </label> <br>
+<label> Fahrzeugtyp: {{auto2.fahrzeugtyp}} </label> <br>
+<input [(ngModel)]="auto.fahrzeugtyp"> <br>
+
+<button (click)="changeAuto(auto2)">Show</button>
 
 
