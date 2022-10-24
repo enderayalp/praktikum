@@ -6,5 +6,12 @@ text-decoration: underline;
 
 label{
 font-weight:700;
-text-decoration: underline;
+
+}
+
+button:hover{
+        background-color: green;
+    }
+input{
+background-color: red;
 }

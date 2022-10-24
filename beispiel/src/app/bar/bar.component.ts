@@ -17,8 +17,19 @@ export class BarComponent implements OnInit {
     nachname: '',
     addresse: '',
     email: '',
-    password: ''
-  }
+    password: '',
+
+    }
+
+
+
+     mario="";
+
+           sari(val: string){
+               console.warn(val)
+               this.mario = val
+             }
+
 
   @Input()     // myurl: string;
 
@@ -28,6 +39,8 @@ export class BarComponent implements OnInit {
 //     this.myurl = ''
 //   }
 
+
+
   ngOnInit(): void {}
 //   click(){
 //   this.button =
@@ -35,5 +48,6 @@ export class BarComponent implements OnInit {
 
   click() {
     this.show = !this.show;
+
   }
 }

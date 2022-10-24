@@ -31,7 +31,9 @@ fahrzeugtyp:'',
   constructor() { }
 
   changeAuto(auto: Auto){
+    this.auto2.marke = auto.marke;
     this.autoUpdateEvent.emit(auto);
+
   }
 
   ngOnInit(): void {

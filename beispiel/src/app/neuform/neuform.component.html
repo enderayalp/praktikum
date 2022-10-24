@@ -1,3 +1,14 @@
-<h1>BURASI NEU FORMM</h1>
+<p>NeuForm Component</p>
 
-<label> Addresse: {{formDataNeu.addresse}}</label>
+<label> Model: {{mobile.model}} </label> <br>
+<input [(ngModel)]="mobile2.model"> <br>
+
+<label> Marke: {{mobile.marke}} </label> <br>
+<input [(ngModel)]="mobile2.marke"> <br>
+
+<label> Kilometer: {{mobile.kilometer}} </label> <br>
+<input [(ngModel)]="mobile2.kilometer"> <br>
+
+<button (click)="changeAuto(mobile2)">Show</button>
+
+

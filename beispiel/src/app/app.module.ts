@@ -8,6 +8,7 @@ import {FormsModule} from "@angular/forms";
 import { NeuformComponent } from './neuform/neuform.component';
 import { AutoComponent } from './auto/auto.component';
 import { ListeleComponent } from './listele/listele.component';
+import { MobileComponent } from './mobile/mobile.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ListeleComponent } from './listele/listele.component';
     BarComponent,
     NeuformComponent,
     AutoComponent,
-    ListeleComponent
+    ListeleComponent,
+    MobileComponent
   ],
   imports: [
     BrowserModule,

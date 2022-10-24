@@ -30,8 +30,8 @@ show: boolean= false;
 
 changeFormAuto(auto: Auto){
 this.formAuto = auto;
-/*  this.formAuto.marke = auto.marke;
-  this.formAuto.model = auto.model;*/
+ this.formAuto.marke = auto.marke;
+  this.formAuto.model = auto.model;
 }
 
 click() {

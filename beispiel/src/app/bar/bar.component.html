@@ -32,7 +32,7 @@
 <!--<a [href]="myurl">my link</a><br>-->
 
 
-<neuform *ngIf="show" [formDataNeu]="formDataBar"></neuform>
+<!--<neuform *ngIf="show" [formDataNeu]="formDataBar"></neuform>-->
 
 
 <!--<button (click)="click()">show</button>-->
@@ -44,6 +44,29 @@
 <!--  <button (click)="onneuformClick()"></button>-->
 <!--</div>-->
 
-<auto-component> </auto-component>
+<!--<auto-component> </auto-component>-->
+
+<mobile-component></mobile-component>
+
+<h1>Bar Component</h1>
+
+Preis: <input type="text" #box> <br> <br>
+
+Rate: <input type="text" #box1> <br> <br>
+
+MwSt: <input type="text" #box2> <br> <br>
+
+<button (click)="sari('Preis: ' + (box.value)  + ' ' + (box1.value) + ' ' + (box2.value) )">Get Value</button>
+
+<h2>{{mario}}</h2>
+
+<!--assdadasddsadasdad-->
+
+<!--<input type="text" #box/>-->
+<!--<button (click)="sari(box.value)">Get Value</button>-->
+
+<!--<h2>{{mario}}</h2>-->
+
+
 
 <!--<listele-component></listele-component>-->
