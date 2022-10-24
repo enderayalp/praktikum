@@ -11,7 +11,8 @@ import {Router} from '@angular/router';
 export class BarComponent implements OnInit {
 
   text: string = '';     //   text: string = 'ich komme aus der componente';
-
+  price: string = '';
+  rate: string = '';
   formDataBar = {
     vorname: '',
     nachname: '',
@@ -19,16 +20,7 @@ export class BarComponent implements OnInit {
     email: '',
     password: '',
 
-    }
-
-
-
-     mario="";
-
-           sari(val: string){
-               console.warn(val)
-               this.mario = val
-             }
+  }
 
 
   @Input()     // myurl: string;
@@ -40,8 +32,9 @@ export class BarComponent implements OnInit {
 //   }
 
 
+  ngOnInit(): void {
+  }
 
-  ngOnInit(): void {}
 //   click(){
 //   this.button =
 //   }

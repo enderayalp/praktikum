@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 export interface Mobile {
   marke: string,
@@ -13,27 +13,31 @@ export interface Mobile {
 })
 export class MobileComponent implements OnInit {
 
-formMobile: Mobile ={
-marke: '',
-model: '',
-kilometer: '',
-}
+  formMobile: Mobile = {
+    marke: '',
+    model: '',
+    kilometer: '',
+  }
 
-show: boolean= false;
+  showBar: boolean = false;
+  showNeueForm: boolean = false;
 
-changeFormAuto(mobile: Mobile){
-this.formMobile = mobile;
- this.formMobile.marke = mobile.marke;
-  this.formMobile.model = mobile.model;
-}
+  changeFormAuto(mobile: Mobile) {
+    this.formMobile.marke = mobile.marke;
+    this.formMobile.model = mobile.model;
+  }
 
-click() {
-    this.show = !this.show;
+  clickShowNeueForm() {
+    this.showNeueForm = !this.showNeueForm;
+  }
+
+  clickShowBar() {
+    this.showBar = !this.showBar;
   }
 
 
-
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

@@ -1,72 +1,11 @@
 
-<!--<p>{{text}}</p>-->
-
-<!--<a [href]="myurl">my link</a><br>-->
-
-<!--<label> benutzername</label>-->
-<!--<input [(ngModel)]="formData.username" type="text" name="username"> <br>-->
-
-<!--<label> passwort</label>-->
-<!--<input [(ngModel)]="formData.username" type="text" name="password">-->
-
-<!--<label [textContent]="formData.username"></label>-->
-
-
-<!--<label> Vorname:     </label>-->
-<!--<input [(ngModel)]="formDataBar.vorname" type="text" name="vorname" class="bir" align="left"> <br>-->
-
-<!--<label> Nachname: </label>-->
-<!--<input [(ngModel)]="formDataBar.nachname" type="text" name="nachname" class="bir"> <br>-->
-
-<!--<label> Addresse: </label>-->
-<!--<input [(ngModel)]="formDataBar.addresse" type="text" name="addresse" class="bir"> <br>-->
-
-<!--<label> E-Mail:</label>-->
-<!--<input [(ngModel)]="formDataBar.email" type="email" name="email" class="bir"> <br>-->
-
-<!--<label> Password: </label>-->
-<!--<input [(ngModel)]="formDataBar.password" type="password" name="password" class="bir"> <br>  <br>-->
-
-<!--  <button>Save</button>-->
-
-<!--<a [href]="myurl">my link</a><br>-->
-
-
-<!--<neuform *ngIf="show" [formDataNeu]="formDataBar"></neuform>-->
-
-
-<!--<button (click)="click()">show</button>-->
-
-
-<!--<h1>BURASIDA Bar componente ait</h1>-->
-<!--<div>-->
-<!--  <a routerLink="/neuform">Go NeuForm</a>-->
-<!--  <button (click)="onneuformClick()"></button>-->
-<!--</div>-->
-
-<!--<auto-component> </auto-component>-->
-
-<mobile-component></mobile-component>
-
 <h1>Bar Component</h1>
 
-Preis: <input type="text" #box> <br> <br>
+Preis: <input [(ngModel)]="price"> <br>
 
-Rate: <input type="text" #box1> <br> <br>
-
-MwSt: <input type="text" #box2> <br> <br>
-
-<button (click)="sari('Preis: ' + (box.value)  + ' ' + (box1.value) + ' ' + (box2.value) )">Get Value</button>
-
-<h2>{{mario}}</h2>
-
-<!--assdadasddsadasdad-->
-
-<!--<input type="text" #box/>-->
-<!--<button (click)="sari(box.value)">Get Value</button>-->
-
-<!--<h2>{{mario}}</h2>-->
+Preis: <input [(ngModel)]="rate"> <br>
 
 
+<h2>{{price}}</h2>
+<h2>{{rate}}</h2>
 
-<!--<listele-component></listele-component>-->

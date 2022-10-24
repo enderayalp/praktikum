@@ -1,17 +1,21 @@
 <p>Mobile Component</p>
-<div >
-<label>Model: </label>
-<input [(ngModel)]="formMobile.model" class="inpt"> <br>
+<div>
+  <label>Model: </label>
+  <input [(ngModel)]="formMobile.model" class="inpt"> <br>
 
-<label>Marke: </label>
-<input [(ngModel)]="formMobile.marke" class="inpt"> <br>
+  <label>Marke: </label>
+  <input [(ngModel)]="formMobile.marke" class="inpt"> <br>
 
-<label>Kilometer: </label>
-<input [(ngModel)]="formMobile.kilometer" class="kminpt"> <br> </div>
+  <label>Kilometer: </label>
+  <input [(ngModel)]="formMobile.kilometer" class="kminpt"> <br></div>
 
-<button (click)="click()">Show</button> <br>
+<button (click)="clickShowBar()">Show Bar</button> <br>
+<button (click)="clickShowNeueForm()">Show Neue Form</button> <br>
 
-<neuform-component (autoUpdateEvent)="changeFormAuto($event)" *ngIf="show" [mobile]="formMobile"> </neuform-component> <br>
+<neuform-component (autoUpdateEvent)="changeFormAuto($event)" *ngIf="showNeueForm" [mobile]="formMobile"></neuform-component>
+<br>
+
+<bar-component *ngIf="showBar"></bar-component>
 
 
 
