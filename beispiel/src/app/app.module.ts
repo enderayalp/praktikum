@@ -9,6 +9,8 @@ import { NeuformComponent } from './neuform/neuform.component';
 import { AutoComponent } from './auto/auto.component';
 import { ListeleComponent } from './listele/listele.component';
 import { MobileComponent } from './mobile/mobile.component';
+import { BuchComponent } from './buch/buch.component';
+import { BookComponent } from './book/book.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { MobileComponent } from './mobile/mobile.component';
     NeuformComponent,
     AutoComponent,
     ListeleComponent,
-    MobileComponent
+    MobileComponent,
+    BuchComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,

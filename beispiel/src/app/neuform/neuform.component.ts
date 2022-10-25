@@ -12,7 +12,7 @@ export class NeuformComponent implements OnInit {
 mobile: Mobile={
 model:"",
 marke:"",
-kilometer:""
+kilometer:"",
 }
 
 @Output() autoUpdateEvent = new EventEmitter<Mobile>;
@@ -20,7 +20,7 @@ kilometer:""
 mobile2: Mobile={
 model:"",
 marke:"",
-kilometer:""
+kilometer:"",
 }
 
   constructor() { }
