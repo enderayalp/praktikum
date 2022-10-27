@@ -3,30 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BarComponent } from './bar/bar.component';
-import {FormsModule} from "@angular/forms";
-import { NeuformComponent } from './neuform/neuform.component';
-import { AutoComponent } from './auto/auto.component';
-import { ListeleComponent } from './listele/listele.component';
-import { MobileComponent } from './mobile/mobile.component';
-import { BuchComponent } from './buch/buch.component';
-import { BookComponent } from './book/book.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { BookListItemComponent } from './book-list-item/book-list-item.component';
+import { MyComponent } from './my/my.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BarComponent,
-    NeuformComponent,
-    AutoComponent,
-    ListeleComponent,
-    MobileComponent,
-    BuchComponent,
-    BookComponent
+    BookListComponent,
+    BookListItemComponent,
+    MyComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

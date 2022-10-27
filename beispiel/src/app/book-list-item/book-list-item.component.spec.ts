@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NeuformComponent } from './neuform.component';
+import { BookListItemComponent } from './book-list-item.component';
 
-describe('NeuformComponent', () => {
-  let component: NeuformComponent;
-  let fixture: ComponentFixture<NeuformComponent>;
+describe('BookListItemComponent', () => {
+  let component: BookListItemComponent;
+  let fixture: ComponentFixture<BookListItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NeuformComponent ]
+      declarations: [ BookListItemComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NeuformComponent);
+    fixture = TestBed.createComponent(BookListItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
