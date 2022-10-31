@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-// import { Router } from '@angular/router';
+import { Book } from './shared/book';
+type ViewState= 'list' | 'details';
 
 @Component({
   selector: 'app-component',
@@ -7,7 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'beispiel';
+//   title = 'beispiel';
+//   book:Book;  Welche ist Richtig ??
+book:any;
+  viewState: ViewState='list';
+
+  showList(){
+  this.viewState='list';
+  }
+
+  showDetails(book:Book){
+  this.book= book;
+  this.viewState='details';
+  }
+
   }
 
 
