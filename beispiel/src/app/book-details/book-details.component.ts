@@ -12,11 +12,14 @@ export class BookDetailsComponent implements OnInit {
 @Output() showListEvent = new EventEmitter<any>();
 
   constructor() {
-    this.book={authors: [], isbn: "", published: new Date(), title: ""};
+    this.book={authors: [], isbn: "", published: new Date(), title: "" };
+
   }
 
   ngOnInit(): void {
   }
+
+
 
   getRating(num:number){
   return new Array(num);
@@ -27,3 +30,6 @@ export class BookDetailsComponent implements OnInit {
   }
 
 }
+
+
+//   const rating : number = this.book!.rating!;
