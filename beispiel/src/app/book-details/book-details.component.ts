@@ -12,7 +12,7 @@ export class BookDetailsComponent implements OnInit {
 @Output() showListEvent = new EventEmitter<any>();
 
   constructor() {
-    this.book={authors: [], isbn: "", published: new Date(), title: "" };
+    this.book={authors: [], isbn: "", published: new Date(), title: "", rating: 5 };
 
   }
 
