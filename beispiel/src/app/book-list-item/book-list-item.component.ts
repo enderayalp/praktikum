@@ -9,8 +9,8 @@ import { Book } from '../shared/book';
 })
 export class BookListItemComponent implements OnInit {
 
-// @Input() book:Book;  Welche ist Richtig ??
-@Input() book:any;
+@Input() book : Book | any;   // Welche ist Richtig ??
+// @Input() book:any;
 
   constructor() { }
 

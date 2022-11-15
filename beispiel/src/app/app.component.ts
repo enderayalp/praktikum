@@ -9,8 +9,8 @@ type ViewState= 'list' | 'details';
 })
 export class AppComponent {
 //   title = 'beispiel';
-//   book:Book;  Welche ist Richtig ??
-book:any;
+   book:Book | any;    // Welche ist Richtig ??
+// book:any;
   viewState: ViewState='list';
 
   showList(){

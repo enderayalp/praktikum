@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "beispiel": {
+    "my-project": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/beispiel",
+            "outputPath": "dist/my-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,8 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/semantic-ui-css/semantic.css"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -65,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "beispiel:build:production"
+              "browserTarget": "my-project:build:production"
             },
             "development": {
-              "browserTarget": "beispiel:build:development"
+              "browserTarget": "my-project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "beispiel:build"
+            "browserTarget": "my-project:build"
           }
         },
         "test": {
@@ -91,16 +90,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/semantic-ui-css/semantic.css"
+              "src/styles.css"
             ],
             "scripts": []
           }
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "ba7de861-87c0-430a-887d-690d1736ccd0"
   }
 }
