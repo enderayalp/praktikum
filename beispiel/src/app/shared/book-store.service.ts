@@ -11,7 +11,7 @@ import { BookFactory} from "./book-factory";
 })
 export class BookStoreService {
 
-  private api = 'https://api4.angular-buch.com';
+  private api = 'https://api4.angular-buch.com/secure';
 
 books: Book[];
 
