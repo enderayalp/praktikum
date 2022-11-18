@@ -9,7 +9,7 @@ import { Book } from '../shared/book';
   styleUrls: ['./book-details.component.css']
 })
 export class BookDetailsComponent implements OnInit {
-  // book: Book | undefined;
+  book: Book;
 @Input() book:Book | any;
 @Output() showListEvent = new EventEmitter<any>();
 
