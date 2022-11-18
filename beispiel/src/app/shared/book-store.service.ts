@@ -36,16 +36,10 @@ private errorHandler(error: HttpErrorResponse): Observable<any>{
    ];
 
 }
-  // getSingle(isbn: string | null): Book | undefined {
-  //   return this.books.find(book => book.isbn === isbn);
-  // }
 
-  getSingle(isbn: string | null): Observable<Book> {
+  getSingle(isbn: string ): Observable<Book> {
     return this.http.get<BookRaw>(`${this.api}/books/${isbn}`).pipe(retry(3), map(b=>BookFactory.fromRaw(b)), catchError(this.errorHandler));
   }
-
-// getAll():Book[] {
-// return this.books;
 
   getAllSearch(searchTerm:string): Observable<Book[]>{
   return this.http.get<BookRaw[]>(`${this.api}/books/search/${searchTerm}`).pipe(retry(3), map(booksRaw => booksRaw.map(b => BookFactory.fromRaw(b)),),
@@ -54,7 +48,6 @@ private errorHandler(error: HttpErrorResponse): Observable<any>{
 
   getAll(): Observable<Book[]>{
     return this.http.get<BookRaw[]>(`${this.api}/books`).pipe(map(booksRaw=>booksRaw.map(b=>BookFactory.fromRaw(b)),));
-
   }
 
   remove(isbn: string): Observable<any> {
