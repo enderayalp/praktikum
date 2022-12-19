@@ -1,23 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from "./home/home.component";
-import { BookListComponent} from "./book-list/book-list.component";
-import { BookDetailsComponent} from "./book-details/book-details.component";
-import { CreateBookComponent} from "./create-book/create-book.component";
+import { SkillsComponent } from "./skills/skills.component";
+import {FaehigkeitComponent} from "./faehigkeit/faehigkeit.component";
 
+// @ts-ignore
 const routes: Routes = [
+  { path:'home',  component:HomeComponent  },
 
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path:'',  redirectTo:'HomeComponent', pathMatch: 'full'  },
 
-  { path: 'home',        component: HomeComponent        },
+  { path:'faehigkeit',  component:FaehigkeitComponent  },
 
-  { path: 'books',       component: BookListComponent    },
+  { path:'skills',  component:SkillsComponent  },
 
-  { path: 'books/:isbn', component: BookDetailsComponent },
-
-  { path: 'admin', redirectTo: 'admin/create', pathMatch: 'full' },
-
-  { path: 'admin/create', component: CreateBookComponent }
 
 ];
 
