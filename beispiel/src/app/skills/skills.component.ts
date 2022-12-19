@@ -11,10 +11,11 @@ import {HttpClient} from '@angular/common/http';
 })
 export class SkillsComponent implements OnInit {
 
-
   skills: Skill[];
 
   skillId: number = 0;
+
+  technologieName: string = "";
 
 
   constructor(public tabelleskills: SkillsService, private http: HttpClient) {
@@ -27,7 +28,7 @@ export class SkillsComponent implements OnInit {
   }
 
 
-  technologieName: string = "";
+
 
   getVal(val: string) {
     console.log(val)
