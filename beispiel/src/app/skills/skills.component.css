@@ -1,0 +1,37 @@
+.tabelle table,th,td{
+  border: 2px solid black;
+
+}
+
+.tabelle{
+  width: 50%;
+  border-collapse:collapse;
+
+}
+
+.tabelle th,td{
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+}
+
+.tabelle tr:hover{
+  vertical-align: bottom;
+  background-color: darkgray;
+}
+
+.tabelle tbody tr:nth-child(odd){
+  background-color: aqua;
+}
+
+h1{
+  margin: 39px;
+  padding: 35px;
+
+}
+
+div{
+  padding-left: 15px;
+}
+
+

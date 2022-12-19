@@ -1,0 +1,72 @@
+<br> <br>
+
+
+<table class="table table-hover table-striped">
+
+  <thead>
+  <tr>
+    <th>Technologie</th>
+    <th>Erfahrung in Jahren</th>
+    <th>Zuletz Verwendet</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <ng-container >
+
+    <tr *ngFor="let data of skills">
+      <td>{{data.name}}</td>
+      <td>{{data.years}}</td>
+      <td>{{data.lastUsed}}</td>
+
+    </tr>
+
+  </ng-container>
+  </tbody>
+</table> <br>
+
+Id: <input [(ngModel)]="id"> <br><br>
+
+Technologie: <input type="text" #box/>  <br><br><br><br>
+
+
+<p> IdCopy: {{id}} </p>      <br> <br>
+
+<p> TechnologieCopy: {{technoName}} </p>      <br><br>
+
+
+
+<label *ngFor="let contact of contactList">
+  <input type="text" #box3 (keyup.enter)="consoleAus(box3.value)" value="{{contact.name}}"> <br>
+  <input value="{{contact.years}}"> <br>
+  <input value="{{contact.lastUsed}}">
+</label> <br> <br>
+
+
+<!--<button (click)="tabelleskills.callingFromTemplate()"> Calling Directly </button>-->
+
+
+<button (click)="change()">Change Id</button>
+
+<button (click)="getVal(box.value)">Change Technologie</button>
+
+<button (click)="update()">Update</button>
+
+
+<router-outlet></router-outlet>
+
+
+<!--keyup.enter: <input type="text" #box3 (keyup.enter)="myEvent(box3.value)"> <br><br>-->
+
+
+
+
+
+<div class="card text-center m-3">
+  <h5 class="card-header">
+    Simple PUT BURSA request with response type &lt;any&gt;
+  </h5>
+  <div class="card-body">Post Id: {{ postId }}</div>
+</div>
