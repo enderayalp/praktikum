@@ -13,6 +13,7 @@ import { FaehigkeitComponent } from './faehigkeit/faehigkeit.component';
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     SkillsComponent,
     FaehigkeitComponent,
 

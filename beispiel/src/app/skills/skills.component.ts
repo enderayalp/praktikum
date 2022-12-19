@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SkillsService} from "../tabelleskills.service";
 import {Observable} from "rxjs";
 import {Skill} from "../Data";
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-skills',
@@ -12,76 +12,43 @@ import { HttpClient } from '@angular/common/http';
 export class SkillsComponent implements OnInit {
 
 
-skills: Skill[];
+  skills: Skill[];
 
-id: number= 0 ;
+  skillId: number = 0;
+
 
   constructor(public tabelleskills: SkillsService, private http: HttpClient) {
-    this.skills=[];
-
+    this.skills = [];
   }
 
-  contactList: any;
-  postId: any;
 
   ngOnInit(): void {
-    this.tabelleskills.getAllSkills().subscribe((skills: Skill[])=>this.skills=skills);
-
-    this.tabelleskills.getContacts().subscribe(data => { this.contactList = data; });
-
-
-    const body = { title: 'Aaaangular PUT Request Example' };
-    this.http.put<any>('https://jsonplaceholder.typicode.com/posts/2', body)
-      .subscribe(data => this.postId = data.id);
-
-
-  }
-
-  change(){
-    this.id = 5;
+    this.tabelleskills.getAllSkills().subscribe((skills: Skill[]) => this.skills = skills);
   }
 
 
-technoName: string ="";
+  technologieName: string = "";
 
-  getVal(val: string)
-  {
+  getVal(val: string) {
     console.log(val)
-    this.technoName = val
+    this.technologieName = val
   }
 
-
-  consoleAus(evt: any)
-  {
+  consoleAus(evt: any) {
     console.warn(evt)
   }
 
-
- updateName: string ="";
-
-    get(val: string)
-    {
-      console.log(val)
-      this.updateName = val
-    }
-
-    update()
-    {
-      this.http.put<any>( this.technoName, this.updateName)
-        .subscribe(data => this.id = data.id);
-    }
-
-
-
-
-
-
-
-  //  this.tabelleskills.update().subscribe(data=>{console.log(data);})
+  update() {
+    console.log(this.technologieName);
+    const change = {
+      name: this.technologieName,
+      id: this.skillId,
+    };
+    return this.http.put('https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/2', change)
+      .subscribe()
+  }
 
 }
-// this.tabelleskills.update();
-
 
 
 
