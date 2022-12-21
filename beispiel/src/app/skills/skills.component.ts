@@ -17,6 +17,10 @@ export class SkillsComponent implements OnInit {
 
   technologieName: string = "";
 
+  setErfahrungJahren: string = "";
+
+  setLastUsed: string = "";
+
 
   constructor(public tabelleskills: SkillsService, private http: HttpClient) {
     this.skills = [];
@@ -27,22 +31,13 @@ export class SkillsComponent implements OnInit {
     this.tabelleskills.getAllSkills().subscribe((skills: Skill[]) => this.skills = skills);
   }
 
-
-
-
-  getVal(val: string) {
-    console.log(val)
-    this.technologieName = val
-  }
-
-  consoleAus(evt: any) {
-    console.warn(evt)
-  }
-
   update() {
-    console.log(this.technologieName);
-    const change = {
+    console.log(this.technologieName, this.setErfahrungJahren, this.setLastUsed);
+     const change = {
       name: this.technologieName,
+      years: this.setErfahrungJahren,
+      lastUsed: this.setLastUsed
+
     };
 
     return this.http.put<void>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.skillId}`, change)

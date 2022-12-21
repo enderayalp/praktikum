@@ -37,15 +37,6 @@ export class SkillsService {
     ]
   }
 
-
-  getContacts(){
-    return this.http.get('https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill');
-  }
-
-  callingFromTemplate(){
-    console.log('Calling From Template directly')
-  }
-
  update(){
     const change={
       name: 'ich bin id 2',

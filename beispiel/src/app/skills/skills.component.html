@@ -28,13 +28,14 @@
 
 Id: <input [(ngModel)]="skillId"> <br><br>
 
-Technologie: <input type="text" #box/>  <br><br><br><br>
+Technologie: <input [(ngModel)]="technologieName"/>  <br><br>
 
+Erfahrung in Jahren: <input [(ngModel)]="setErfahrungJahren"/>  <br><br>
 
-<button (click)="getVal(box.value)">Change Technologie</button>
+Zuletz Verwendet: <input [(ngModel)]="setLastUsed"/>  <br><br>
+
 
 <button (click)="update()">Update</button>
-
 
 <router-outlet></router-outlet>
 
