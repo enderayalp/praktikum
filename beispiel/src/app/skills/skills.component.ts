@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {SkillsService} from "../tabelleskills.service";
-import {Observable} from "rxjs";
 import {Skill} from "../Data";
 import {HttpClient} from '@angular/common/http';
 
@@ -33,7 +32,7 @@ export class SkillsComponent implements OnInit {
 
   update() {
     console.log(this.technologieName, this.setErfahrungJahren, this.setLastUsed);
-     const change = {
+    const change = {
       name: this.technologieName,
       years: this.setErfahrungJahren,
       lastUsed: this.setLastUsed
@@ -41,10 +40,13 @@ export class SkillsComponent implements OnInit {
     };
 
     return this.http.put<Skill>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.skillId}`, change)
-      .subscribe()
+      .subscribe((newSkill: Skill) =>
+        this.skills = this.skills.map(tableSkill => {
+            return tableSkill.id === newSkill.id ? newSkill : tableSkill;
+          }
+        )
+      );
   }
-
 }
 
-// liste ändern element finden ein liste
 
