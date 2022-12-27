@@ -40,11 +40,11 @@ export class SkillsComponent implements OnInit {
 
     };
 
-    return this.http.put<void>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.skillId}`, change)
+    return this.http.put<Skill>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.skillId}`, change)
       .subscribe()
   }
 
 }
 
-
+// liste ändern element finden ein liste
 
