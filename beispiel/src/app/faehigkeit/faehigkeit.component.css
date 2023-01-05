@@ -1,8 +1,8 @@
-p{
+p {
   padding-left: 15px;
 }
 
-.gallery{
+.gallery {
   margin: 10px;
   border: 1px solid black;
   float: left;
@@ -10,18 +10,18 @@ p{
   height: 180px;
 }
 
-.desc{
+.desc {
   padding: 15px;
   text-align: center;
   font-weight: bold;
 }
 
-.gallery img{
+.gallery img {
   width: 100%;
 
 }
 
-.gallery:hover{
+.gallery:hover {
   border: 1px solid black;
   box-shadow: 0 8px 16px 0 gray;
 }

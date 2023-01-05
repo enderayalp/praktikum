@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {SkillsService} from "../tabelleskills.service";
-import {Observable} from "rxjs";
 import {Skill} from "../Data";
 import {HttpClient} from '@angular/common/http';
 
@@ -13,9 +12,9 @@ export class SkillsComponent implements OnInit {
 
   skills: Skill[];
 
-  selectedData:  Partial<Skill> = {};
+  selectedData: Partial<Skill> = {};
 
-  data: string="";
+  data: string = "";
 
 
   constructor(public tabelleskills: SkillsService, private http: HttpClient) {
@@ -46,15 +45,14 @@ export class SkillsComponent implements OnInit {
   }
 
   onSelected(data: Skill): void {
-   this.selectedData = data;
+    this.selectedData = data;
   }
 
 
-  onEdit(item: any ){
+  onEdit(item: any) {
     debugger;
     item.isEdit = true;
   }
-
 
 
 }

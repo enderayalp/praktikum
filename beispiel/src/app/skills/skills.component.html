@@ -21,32 +21,32 @@
 
 
       <td>
-         <div *ngIf="data.isEdit">
-            <input type="text" [(ngModel)]="data.name" class="form-control"/>
-               </div>
-                  <div *ngIf="!data.isEdit"> {{data.name}}</div>
+        <div *ngIf="data.isEdit">
+          <input type="text" [(ngModel)]="data.name" class="form-control"/>
+        </div>
+        <div *ngIf="!data.isEdit"> {{data.name}}</div>
       </td>
 
 
       <td>
         <div *ngIf="data.isEdit">
           <input type="text" [(ngModel)]="data.years" class="form-control"/>
-             </div>
-                <div *ngIf="!data.isEdit"> {{data.years}}</div>
+        </div>
+        <div *ngIf="!data.isEdit"> {{data.years}}</div>
       </td>
 
 
       <td>
         <div *ngIf="data.isEdit">
           <input type="text" [(ngModel)]="data.lastUsed" class="form-control"/>
-             </div>
-                <div *ngIf="!data.isEdit"> {{data.lastUsed}}</div>
+        </div>
+        <div *ngIf="!data.isEdit"> {{data.lastUsed}}</div>
       </td>
 
 
       <td>
         <div *ngIf="data.isEdit">
-          <button class="btn btn-sm btn-success"(click)="update()">Update</button>
+          <button class="btn btn-sm btn-success" (click)="update()">Update</button>
           <button class="btn btn-sm btn-success" (click)="data.isEdit = false">Cancel</button>
         </div>
 
@@ -61,7 +61,6 @@
   </ng-container>
   </tbody>
 </table> <br>
-
 
 
 <router-outlet></router-outlet>

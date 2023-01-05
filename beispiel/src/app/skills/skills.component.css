@@ -1,45 +1,45 @@
-.tabelle table,th,td{
+.tabelle table, th, td {
   border: 2px solid black;
 
 }
 
-.tabelle{
+.tabelle {
   width: 50%;
-  border-collapse:collapse;
+  border-collapse: collapse;
 
 }
 
-.tabelle input{
+.tabelle input {
   align-content: center;
 
 }
 
-.tabelle th,td{
+.tabelle th, td {
   height: 40px;
   padding: 10px;
   text-align: center;
 }
 
-.tabelle tr:hover{
+.tabelle tr:hover {
   vertical-align: bottom;
   background-color: darkgray;
 }
 
-.tabelle tbody tr:nth-child(odd){
+.tabelle tbody tr:nth-child(odd) {
   background-color: aqua;
 }
 
-h1{
+h1 {
   margin: 39px;
   padding: 35px;
 
 }
 
-div{
+div {
   padding-left: 15px;
 }
 
-input{
+input {
   width: 200px;
 
 }

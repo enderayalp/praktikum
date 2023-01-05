@@ -12,7 +12,7 @@ export interface Faehigkeit {
   title2: string;
 }
 
-export interface Data{
+export interface Data {
   userId: number;
   id: number;
   title: string;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SkillsService} from "../tabelleskills.service";
 import {Faehigkeit} from "../Data";
 
@@ -18,10 +18,8 @@ export class FaehigkeitComponent implements OnInit {
 
   ngOnInit(): void {
 
-        this.faehigkeit = this.tabelleskills.getAllFaehigkeiten();
+    this.faehigkeit = this.tabelleskills.getAllFaehigkeiten();
   }
-
-
 
 
 }
