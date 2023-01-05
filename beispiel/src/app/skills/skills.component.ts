@@ -12,9 +12,7 @@ export class SkillsComponent implements OnInit {
 
   skills: Skill[];
 
-  selectedData: Partial<Skill> = {};
-
-  data: string = "";
+  selectedSkill: Partial<Skill> = {};
 
 
   constructor(public tabelleskills: SkillsService, private http: HttpClient) {
@@ -26,16 +24,16 @@ export class SkillsComponent implements OnInit {
   }
 
   update() {
-
+    console.log("update skill ")
     const change = {
 
-      name: this.selectedData.name,
-      years: this.selectedData.years,
-      lastUsed: this.selectedData.lastUsed
+      name: this.selectedSkill.name,
+      years: this.selectedSkill.years,
+      lastUsed: this.selectedSkill.lastUsed
 
     };
 
-    return this.http.put<Skill>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.selectedData.id}`, change)
+    return this.http.put<Skill>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.selectedSkill.id}`, change)
       .subscribe((newSkill: Skill) =>
         this.skills = this.skills.map(tableSkill => {
             return tableSkill.id === newSkill.id ? newSkill : tableSkill;
@@ -44,13 +42,13 @@ export class SkillsComponent implements OnInit {
       );
   }
 
-  onSelected(data: Skill): void {
-    this.selectedData = data;
+  onSelected(skill: Skill): void {
+    console.log("clicked skill "+skill.id)
+    this.selectedSkill = skill;
   }
 
 
   onEdit(item: any) {
-    debugger;
     item.isEdit = true;
   }
 

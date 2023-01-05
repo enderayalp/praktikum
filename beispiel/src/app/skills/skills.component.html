@@ -17,41 +17,41 @@
 
   <ng-container>
 
-    <tr *ngFor="let data of skills" (click)="onSelected(data)">
+    <tr *ngFor="let skill of skills" (click)="onSelected(skill)">
 
 
       <td>
-        <div *ngIf="data.isEdit">
-          <input type="text" [(ngModel)]="data.name" class="form-control"/>
+        <div *ngIf="skill.isEdit">
+          <input type="text" [(ngModel)]="skill.name" class="form-control"/>
         </div>
-        <div *ngIf="!data.isEdit"> {{data.name}}</div>
+        <div *ngIf="!skill.isEdit"> {{skill.name}}</div>
       </td>
 
 
       <td>
-        <div *ngIf="data.isEdit">
-          <input type="text" [(ngModel)]="data.years" class="form-control"/>
+        <div *ngIf="skill.isEdit">
+          <input type="text" [(ngModel)]="skill.years" class="form-control"/>
         </div>
-        <div *ngIf="!data.isEdit"> {{data.years}}</div>
+        <div *ngIf="!skill.isEdit"> {{skill.years}}</div>
       </td>
 
 
       <td>
-        <div *ngIf="data.isEdit">
-          <input type="text" [(ngModel)]="data.lastUsed" class="form-control"/>
+        <div *ngIf="skill.isEdit">
+          <input type="text" [(ngModel)]="skill.lastUsed" class="form-control"/>
         </div>
-        <div *ngIf="!data.isEdit"> {{data.lastUsed}}</div>
+        <div *ngIf="!skill.isEdit"> {{skill.lastUsed}}</div>
       </td>
 
 
       <td>
-        <div *ngIf="data.isEdit">
+        <div *ngIf="skill.isEdit">
           <button class="btn btn-sm btn-success" (click)="update()">Update</button>
-          <button class="btn btn-sm btn-success" (click)="data.isEdit = false">Cancel</button>
+          <button class="btn btn-sm btn-success" (click)="skill.isEdit = false">Cancel</button>
         </div>
 
-        <div *ngIf="!data.isEdit">
-          <button class="btn btn-sm btn-success" (click)="onEdit(data)">Edit</button>
+        <div *ngIf="!skill.isEdit">
+          <button class="btn btn-sm btn-success" (click)="onEdit(skill)">Edit</button>
         </div>
       </td>
 
