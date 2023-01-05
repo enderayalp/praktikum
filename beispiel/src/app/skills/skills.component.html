@@ -8,34 +8,84 @@
     <th>Technologie</th>
     <th>Erfahrung in Jahren</th>
     <th>Zuletz Verwendet</th>
+    <th>Ordnen</th>
 
   </tr>
   </thead>
 
   <tbody>
 
-  <ng-container >
+  <ng-container>
 
-    <tr *ngFor="let data of skills">
-      <td>{{data.name}}</td>
-      <td>{{data.years}}</td>
-      <td>{{data.lastUsed}}</td>
+    <tr *ngFor="let data of skills" (click)="onSelected(data)">
 
+
+      <td>
+         <div *ngIf="data.isEdit">
+            <input type="text" [(ngModel)]="data.name" class="form-control"/>
+               </div>
+                  <div *ngIf="!data.isEdit"> {{data.name}}</div>
+      </td>
+
+
+      <td>
+        <div *ngIf="data.isEdit">
+          <input type="text" [(ngModel)]="data.years" class="form-control"/>
+             </div>
+                <div *ngIf="!data.isEdit"> {{data.years}}</div>
+      </td>
+
+
+      <td>
+        <div *ngIf="data.isEdit">
+          <input type="text" [(ngModel)]="data.lastUsed" class="form-control"/>
+             </div>
+                <div *ngIf="!data.isEdit"> {{data.lastUsed}}</div>
+      </td>
+
+
+      <td>
+        <div *ngIf="data.isEdit">
+          <button class="btn btn-sm btn-success"(click)="update()">Update</button>
+          <button class="btn btn-sm btn-success" (click)="data.isEdit = false">Cancel</button>
+        </div>
+
+        <div *ngIf="!data.isEdit">
+          <button class="btn btn-sm btn-success" (click)="onEdit(data)">Edit</button>
+        </div>
+      </td>
+
+
+
+
+
+
+
+<!--      <td>{{data.name}}</td>-->
+<!--      <td>{{data.years}}</td>-->
+<!--      <td>{{data.lastUsed}}</td>-->
+<!--      <td><button class="btn btn-sm btn-success" (click)="onEdit(data)">Edit</button></td>-->
     </tr>
+
   </ng-container>
   </tbody>
 </table> <br>
 
-Id: <input [(ngModel)]="skillId"> <br><br>
+<!--Id: <input [(ngModel)]=selectedData.id> <br><br>-->
 
-Technologie: <input [(ngModel)]="technologieName"/>  <br><br>
+<!--Technologie: <input [(ngModel)]="selectedData.name"/>  <br><br>-->
 
-Erfahrung in Jahren: <input [(ngModel)]="setErfahrungJahren"/>  <br><br>
+<!--Erfahrung in Jahren: <input [(ngModel)]="selectedData.years"/>  <br><br>-->
 
-Zuletz Verwendet: <input [(ngModel)]="setLastUsed"/>  <br><br>
+<!--Zuletz Verwendet: <input [(ngModel)]="selectedData.lastUsed"/>  <br><br>-->
 
 
-<button (click)="update()">Update</button>
+<!--<button (click)="update()">Update</button>-->
+
+
+
+
+
 
 <router-outlet></router-outlet>
 

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SkillsService} from "../tabelleskills.service";
+import {Observable} from "rxjs";
 import {Skill} from "../Data";
 import {HttpClient} from '@angular/common/http';
 
@@ -12,34 +13,30 @@ export class SkillsComponent implements OnInit {
 
   skills: Skill[];
 
-  skillId: number = 0;
+  selectedData:  Partial<Skill> = {};
 
-  technologieName: string = "";
-
-  setErfahrungJahren: string = "";
-
-  setLastUsed: string = "";
+  data: string="";
 
 
   constructor(public tabelleskills: SkillsService, private http: HttpClient) {
     this.skills = [];
   }
 
-
   ngOnInit(): void {
     this.tabelleskills.getAllSkills().subscribe((skills: Skill[]) => this.skills = skills);
   }
 
   update() {
-    console.log(this.technologieName, this.setErfahrungJahren, this.setLastUsed);
+
     const change = {
-      name: this.technologieName,
-      years: this.setErfahrungJahren,
-      lastUsed: this.setLastUsed
+
+      name: this.selectedData.name,
+      years: this.selectedData.years,
+      lastUsed: this.selectedData.lastUsed
 
     };
 
-    return this.http.put<Skill>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.skillId}`, change)
+    return this.http.put<Skill>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.selectedData.id}`, change)
       .subscribe((newSkill: Skill) =>
         this.skills = this.skills.map(tableSkill => {
             return tableSkill.id === newSkill.id ? newSkill : tableSkill;
@@ -47,6 +44,20 @@ export class SkillsComponent implements OnInit {
         )
       );
   }
+
+  onSelected(data: Skill): void {
+   this.selectedData = data;
+  }
+
+
+  onEdit(item: any ){
+    debugger;
+    item.isEdit = true;
+  }
+
+
+
 }
+
 
 

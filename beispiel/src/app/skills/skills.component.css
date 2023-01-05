@@ -9,6 +9,11 @@
 
 }
 
+.tabelle input{
+  align-content: center;
+
+}
+
 .tabelle th,td{
   height: 40px;
   padding: 10px;
@@ -32,6 +37,11 @@ h1{
 
 div{
   padding-left: 15px;
+}
+
+input{
+  width: 200px;
+
 }
 
 
