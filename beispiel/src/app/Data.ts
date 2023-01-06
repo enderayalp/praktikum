@@ -3,8 +3,6 @@ export interface Skill {
   years: string;
   lastUsed: string;
   id: number;
-  // isEdit:  false;
-
 }
 
 export interface Faehigkeit {

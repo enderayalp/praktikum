@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SkillsService} from "../tabelleskills.service";
 import {Skill} from "../Data";
 import {HttpClient} from '@angular/common/http';
@@ -12,9 +12,7 @@ export class TabelleskillsComponent implements OnInit {
 
   skills: Skill[];
 
-  selectedSkill: Partial<Skill> = {};
-
-  isEdit: boolean= false;
+  editableSkill?: Skill;
 
 
   constructor(public tabelleskills: SkillsService, private http: HttpClient) {
@@ -29,13 +27,13 @@ export class TabelleskillsComponent implements OnInit {
     console.log("update skill ")
     const change = {
 
-      name: this.selectedSkill.name,
-      years: this.selectedSkill.years,
-      lastUsed: this.selectedSkill.lastUsed
+      name: this.editableSkill?.name,
+      years: this.editableSkill?.years,
+      lastUsed: this.editableSkill?.lastUsed
 
     };
 
-    return this.http.put<Skill>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.selectedSkill.id}`, change)
+    return this.http.put<Skill>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.editableSkill?.id}`, change)
       .subscribe((newSkill: Skill) =>
         this.skills = this.skills.map(tableSkill => {
             return tableSkill.id === newSkill.id ? newSkill : tableSkill;
@@ -44,14 +42,17 @@ export class TabelleskillsComponent implements OnInit {
       );
   }
 
-  onSelected(skill: Skill): void {
-    console.log("clicked skill "+skill.id)
-    this.selectedSkill = skill;
+  onEdit(skill: Skill) {
+    this.editableSkill = skill;
+  }
+
+  cancelEdit() {
+    this.editableSkill = undefined;
   }
 
 
-  onEdit(item: Skill) {
-    item.isEdit = true;
+  isEditable(skill: Skill) {
+        return this.editableSkill === skill;
   }
 
 

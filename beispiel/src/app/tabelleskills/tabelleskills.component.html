@@ -13,37 +13,37 @@
 
   <ng-container>
 
-    <tr *ngFor="let skill of skills" (click)="onSelected(skill)">
+    <tr *ngFor="let skill of skills">
       <td>
-        <div *ngIf="isEdit">
+        <div *ngIf="isEditable(skill)">
           <input type="text" [(ngModel)]="skill.name" class="form-control"/>
         </div>
-        <div *ngIf="!isEdit"> {{skill.name}}</div>
+        <div *ngIf="!isEditable(skill)"> {{skill.name}}</div>
       </td>
 
 
       <td>
-        <div *ngIf="isEdit">
+        <div *ngIf="isEditable(skill)">
           <input type="text" [(ngModel)]="skill.years" class="form-control"/>
         </div>
-        <div *ngIf="!isEdit"> {{skill.years}} </div>
+        <div *ngIf="!isEditable(skill)"> {{skill.years}} </div>
       </td>
 
       <td>
-        <div *ngIf="isEdit">
+        <div *ngIf="isEditable(skill)">
           <input type="text" [(ngModel)]="skill.lastUsed" class="form-control"/>
         </div>
-        <div *ngIf="!isEdit"> {{skill.lastUsed}}</div>
+        <div *ngIf="!isEditable(skill)"> {{skill.lastUsed}}</div>
       </td>
 
 
       <td>
-        <div *ngIf="isEdit">
+        <div *ngIf="isEditable(skill)">
           <button class="btn btn-sm btn-success" (click)="update()">Update</button>
-          <button class="btn btn-sm btn-success" (click)="isEdit = false">Cancel</button>
+          <button class="btn btn-sm btn-success" (click)="cancelEdit()">Cancel</button>
         </div>
 
-        <div *ngIf="!isEdit">
+        <div *ngIf="!isEditable(skill)">
           <button class="btn btn-sm btn-success" (click)="onEdit(skill)">Edit</button>
         </div>
       </td>
