@@ -1,0 +1,78 @@
+<table class="table table-hover table-striped">
+
+  <thead>
+  <tr>
+    <th>Technologie</th>
+    <th>Erfahrung in Jahren</th>
+    <th>Zuletz Verwendet</th>
+    <th>Ordnen</th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <ng-container>
+
+    <tr *ngFor="let skill of skills" (click)="onSelected(skill)">
+      <td>
+        <div *ngIf="isEdit">
+          <input type="text" [(ngModel)]="skill.name" class="form-control"/>
+        </div>
+        <div *ngIf="!isEdit"> {{skill.name}}</div>
+      </td>
+
+
+      <td>
+        <div *ngIf="isEdit">
+          <input type="text" [(ngModel)]="skill.years" class="form-control"/>
+        </div>
+        <div *ngIf="!isEdit"> {{skill.years}} </div>
+      </td>
+
+      <td>
+        <div *ngIf="isEdit">
+          <input type="text" [(ngModel)]="skill.lastUsed" class="form-control"/>
+        </div>
+        <div *ngIf="!isEdit"> {{skill.lastUsed}}</div>
+      </td>
+
+
+      <td>
+        <div *ngIf="isEdit">
+          <button class="btn btn-sm btn-success" (click)="update()">Update</button>
+          <button class="btn btn-sm btn-success" (click)="isEdit = false">Cancel</button>
+        </div>
+
+        <div *ngIf="!isEdit">
+          <button class="btn btn-sm btn-success" (click)="onEdit(skill)">Edit</button>
+        </div>
+      </td>
+
+
+    </tr>
+
+  </ng-container>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
