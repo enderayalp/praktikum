@@ -3,7 +3,7 @@ export interface Skill {
   years: string;
   lastUsed: string;
   id: number;
-  isEdit: false;
+  // isEdit:  false;
 
 }
 

@@ -7,6 +7,7 @@ import {HomeComponent} from "./home/home.component";
 import {HttpClientModule} from "@angular/common/http";
 import {SkillsComponent} from './skills/skills.component';
 import {FaehigkeitComponent} from './faehigkeit/faehigkeit.component';
+import { TabelleskillsComponent } from './tabelleskills/tabelleskills.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import {FaehigkeitComponent} from './faehigkeit/faehigkeit.component';
     HomeComponent,
     SkillsComponent,
     FaehigkeitComponent,
+    TabelleskillsComponent,
 
 
   ],
