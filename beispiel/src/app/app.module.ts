@@ -8,6 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {SkillsComponent} from './skills/skills.component';
 import {FaehigkeitComponent} from './faehigkeit/faehigkeit.component';
 import { TabelleskillsComponent } from './tabelleskills/tabelleskills.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -17,8 +18,6 @@ import { TabelleskillsComponent } from './tabelleskills/tabelleskills.component'
     SkillsComponent,
     FaehigkeitComponent,
     TabelleskillsComponent,
-
-
   ],
 
   imports: [
@@ -26,6 +25,7 @@ import { TabelleskillsComponent } from './tabelleskills/tabelleskills.component'
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgbModule,
 
   ],
   providers: [],

@@ -14,6 +14,8 @@ export class TabelleskillsComponent implements OnInit {
 
   editableSkill?: Skill;
 
+  currentRate: number = 3;
+
 
   constructor(public tabelleskills: SkillsService, private http: HttpClient) {
     this.skills = [];
@@ -54,6 +56,5 @@ export class TabelleskillsComponent implements OnInit {
   isEditable(skill: Skill) {
         return this.editableSkill === skill;
   }
-
 
 }

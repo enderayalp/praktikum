@@ -6,6 +6,7 @@
     <th>Erfahrung in Jahren</th>
     <th>Zuletz Verwendet</th>
     <th>Ordnen</th>
+    <th>Rating</th>
   </tr>
   </thead>
 
@@ -47,6 +48,17 @@
           <button class="btn btn-sm btn-success" (click)="onEdit(skill)">Edit</button>
         </div>
       </td>
+
+
+      <td>
+        <div style="font-size: x-large; color: orange;">
+
+          <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false"></ngb-rating>
+
+        </div>
+
+      </td>
+
 
 
     </tr>
