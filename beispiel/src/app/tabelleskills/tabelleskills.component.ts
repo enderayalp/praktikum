@@ -14,7 +14,7 @@ export class TabelleskillsComponent implements OnInit {
 
   editableSkill?: Skill;
 
-  currentRate: number = 3;
+  currentRate?: Skill;
 
 
   constructor(public tabelleskills: SkillsService, private http: HttpClient) {
@@ -26,12 +26,13 @@ export class TabelleskillsComponent implements OnInit {
   }
 
   update() {
-    console.log("update skill ")
+
     const change = {
 
       name: this.editableSkill?.name,
       years: this.editableSkill?.years,
-      lastUsed: this.editableSkill?.lastUsed
+      lastUsed: this.editableSkill?.lastUsed,
+      stars: this.editableSkill?.stars  //****
 
     };
 
@@ -46,6 +47,8 @@ export class TabelleskillsComponent implements OnInit {
 
   onEdit(skill: Skill) {
     this.editableSkill = skill;
+    // this.editableSkill == this.currentRate;
+    return this.currentRate === skill
   }
 
   cancelEdit() {
@@ -55,6 +58,11 @@ export class TabelleskillsComponent implements OnInit {
 
   isEditable(skill: Skill) {
         return this.editableSkill === skill;
+
   }
 
-}
+  isCurrent(skill: Skill) {
+    return this.currentRate === skill;
+  }
+
+  }

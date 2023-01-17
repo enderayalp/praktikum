@@ -5,8 +5,12 @@
     <th>Technologie</th>
     <th>Erfahrung in Jahren</th>
     <th>Zuletz Verwendet</th>
-    <th>Ordnen</th>
     <th>Rating</th>
+    <th>Ordnen</th>
+
+
+
+
   </tr>
   </thead>
 
@@ -37,6 +41,14 @@
         <div *ngIf="!isEditable(skill)"> {{skill.lastUsed}}</div>
       </td>
 
+      <td>
+        <div class="stern" *ngIf="isEditable(skill)">
+          <ngb-rating type="text" [max]="5"  [readonly]="false"  [(ngModel)]="skill.stars" ></ngb-rating>
+        </div>
+        <div class="stern" *ngIf="!isEditable(skill)">
+          <ngb-rating type="text" [max]="5"  [readonly]="true"  [(ngModel)]="skill.stars" ></ngb-rating></div>
+      </td>
+
 
       <td>
         <div *ngIf="isEditable(skill)">
@@ -48,17 +60,6 @@
           <button class="btn btn-sm btn-success" (click)="onEdit(skill)">Edit</button>
         </div>
       </td>
-
-
-      <td>
-        <div style="font-size: x-large; color: orange;">
-
-          <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false"></ngb-rating>
-
-        </div>
-
-      </td>
-
 
 
     </tr>
