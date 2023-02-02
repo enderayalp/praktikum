@@ -41,28 +41,41 @@
         <div *ngIf="!isEditable(skill)"> {{skill.lastUsed}}</div>
       </td>
 
+
       <td>
         <div class="stern" *ngIf="isEditable(skill)">
           <ngb-rating type="text" [max]="5"  [readonly]="false"  [(ngModel)]="skill.stars" ></ngb-rating>
         </div>
         <div class="stern" *ngIf="!isEditable(skill)">
-          <ngb-rating type="text" [max]="5"  [readonly]="true"  [(ngModel)]="skill.stars" ></ngb-rating></div>
+          <ngb-rating type="text" [max]="5"  [readonly]="true"  [(rate)]="skill.stars" ></ngb-rating></div>
       </td>
 
 
       <td>
         <div *ngIf="isEditable(skill)">
+
           <button class="btn btn-sm btn-success" (click)="update()">Update</button>
           <button class="btn btn-sm btn-success" (click)="cancelEdit()">Cancel</button>
+          <button class="btn btn-sm btn-success" (click)="deleteSkill(editableSkill)">Delete</button>
+
+
         </div>
 
         <div *ngIf="!isEditable(skill)">
           <button class="btn btn-sm btn-success" (click)="onEdit(skill)">Edit</button>
+
         </div>
       </td>
-
-
+<!--      <button class="btn btn-sm btn-success" (click)="addEmptySkillToSkills(skill)">Add</button>-->
     </tr>
+
+    <button class="btn btn-sm btn-success" (click)="addEmptySkillToSkills()">Add</button>
+
+<!--    <button class="btn btn-sm btn-success" (click)="createAdd()">createAdd</button>-->
+
+
+
+
 
   </ng-container>
   </tbody>
