@@ -16,7 +16,7 @@
 
   <tbody>
 
-  <ng-container>
+  <ng-container >
 
     <tr *ngFor="let skill of skills">
       <td>
@@ -53,9 +53,8 @@
 
       <td>
         <div *ngIf="isEditable(skill)">
-
           <button class="btn btn-sm btn-success" (click)="update()">Update</button>
-          <button class="btn btn-sm btn-success" (click)="cancelEdit()">Cancel</button>
+          <button class="btn btn-sm btn-danger" (click)="cancelEdit()">Cancel</button>
           <button class="btn btn-sm btn-success" (click)="deleteSkill(editableSkill)">Delete</button>
 
 
@@ -67,11 +66,19 @@
         </div>
       </td>
 <!--      <button class="btn btn-sm btn-success" (click)="addEmptySkillToSkills(skill)">Add</button>-->
+
+<!--      <ng-container >-->
+<!--        <td>-->
+<!--          <button class="btn btn-sm btn-success" (click)="addEmptySkillToSkills(skill)">Add</button>-->
+<!--        </td>-->
+<!--      </ng-container>-->
+
+
     </tr>
 
     <button class="btn btn-sm btn-success" (click)="addEmptySkillToSkills()">Add</button>
 
-<!--    <button class="btn btn-sm btn-success" (click)="createAdd()">createAdd</button>-->
+
 
 
 
