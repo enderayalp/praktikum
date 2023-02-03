@@ -66,6 +66,7 @@ private url = 'https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/';
   }
 
 
+
   onEdit(skill: Skill) {
 
     this.editableSkill = skill;
