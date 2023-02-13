@@ -6,9 +6,14 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from "./home/home.component";
 import {HttpClientModule} from "@angular/common/http";
 import {SkillsComponent} from './skills/skills.component';
-import {FaehigkeitComponent} from './faehigkeit/faehigkeit.component';
+import {ProjektComponent} from './projekt/projekt.component';
 import { TabelleskillsComponent } from './tabelleskills/tabelleskills.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProjectsDetailsDialogComponent } from './projects-details-dialog/projects-details-dialog.component';
+import {MatDialogModule, MAT_DIALOG_DATA} from "@angular/material/dialog";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from "@angular/material/button";
+import { ProjektListeComponent } from './projekt-liste/projekt-liste.component';
 
 
 @NgModule({
@@ -16,9 +21,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     HomeComponent,
     SkillsComponent,
-    FaehigkeitComponent,
+    ProjektComponent,
     TabelleskillsComponent,
+    ProjectsDetailsDialogComponent,
+    ProjektListeComponent,
   ],
+
 
   imports: [
     BrowserModule,
@@ -26,9 +34,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     HttpClientModule,
     NgbModule,
+    MatDialogModule,
+    BrowserAnimationsModule
 
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

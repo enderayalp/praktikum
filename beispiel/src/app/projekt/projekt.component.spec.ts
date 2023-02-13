@@ -1,6 +1,6 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {FaehigkeitComponent} from './faehigkeit.component';
+import {FaehigkeitComponent} from './projekt.component';
 
 describe('FaehigkeitComponent', () => {
   let component: FaehigkeitComponent;

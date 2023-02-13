@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {SkillsService} from "../tabelleskills.service";
-import {Skill} from "../Data";
+import {ProjektsService, SkillsService} from "../tabelleskills.service";
+import {Projekt, Skill} from "../Data";
 import {HttpClient} from '@angular/common/http';
 import {filter, map} from 'rxjs/operators';
 import {Observable} from "rxjs";
@@ -19,53 +19,48 @@ export class TabelleskillsComponent implements OnInit {
 
   currentRate?: Skill;
 
-  adding: boolean = false;
-
 private url = 'https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/';
-
-
 
   constructor(public tabelleskills: SkillsService, private http: HttpClient) {
     this.skills = [];
+
   }
 
   ngOnInit(): void {
     this.tabelleskills.getAllSkills().subscribe((skills: Skill[]) => this.skills = skills);
   }
 
-
   update() {
-  console.log('update');
-
     const change = {
-
       name: this.editableSkill?.name,
       years: this.editableSkill?.years,
       lastUsed: this.editableSkill?.lastUsed,
       stars: this.editableSkill?.stars
-
     };
-     if(this.editableSkill?.id) {
-       return this.http.put<Skill>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.editableSkill?.id}`, change)
-         .subscribe((newSkill: Skill) =>
-           this.skills = this.skills.map(tableSkill => {
-               return tableSkill.id === newSkill.id ? newSkill : tableSkill;     //man kann update machen mit put. man kann mit post daten geschrieben werden
-             }
-           )
-         );
-     }else{
-       return this.http.post<Skill>('https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill', this.editableSkill)
-         .pipe(
-           map(addSkill => {
-             this.skills.push(addSkill);
-             return this.skills;
-           })
-         )
-         .subscribe();
-     }
+
+    if (this.editableSkill?.id) { //falsy / truthy
+      return this.http.put<Skill>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.editableSkill?.id}`, change)
+        .subscribe((newSkill: Skill) =>
+          this.skills = this.skills.map(tableSkill => {
+              return tableSkill.id === newSkill.id ? newSkill : tableSkill;     //man kann update machen mit put. man kann mit post daten geschrieben werden
+            }
+          )
+        );
+
+    } else {
+      return this.http.post<Skill>('https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill', this.editableSkill)
+        .pipe(
+          map(savedSkill => {
+            this.skills.push(savedSkill);
+            this.skills.forEach((skill,index)=>{
+              if(!skill.id) this.skills.splice(index,1);
+            });
+            return this.skills;
+          })
+        )
+        .subscribe();
+    }
   }
-
-
 
   onEdit(skill: Skill) {
 
@@ -73,11 +68,9 @@ private url = 'https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/';
     return this.currentRate === skill
   }
 
-
   cancelEdit() {
     this.editableSkill = undefined;
   }
-
 
   deleteSkill(skill) {
 
@@ -86,7 +79,6 @@ private url = 'https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/';
     this.skills.splice(index, 1);
     })
   }
-
 
   addEmptySkillToSkills() {
 
@@ -100,21 +92,7 @@ private url = 'https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/';
     };
     this.skills.push(emptySkill);
     return this.skills;
-  /*  this.http.post<Skill>('https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill', emptySkill)
-      .pipe(
-        map(addSkill => {
-          this.skills.push(addSkill);
-          return this.skills;
-        })
-      )
-      .subscribe();*/
-
-    // this.editableSkill = skill;
-    // return this.currentRate === skill;
-
-
-  }
-
+    }
 
   isEditable(skill: Skill) {
         return this.editableSkill === skill;
@@ -122,6 +100,6 @@ private url = 'https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/';
 
   isCurrent(skill: Skill) {
     return this.currentRate === skill;
-  }
+     }
 
   }
