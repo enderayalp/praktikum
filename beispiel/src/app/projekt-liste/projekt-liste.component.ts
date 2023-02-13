@@ -1,7 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ProjektsService, SkillsService} from "../tabelleskills.service";
-import {Projekt} from "../Data";
-import {ProjektComponent} from "../projekt/projekt.component";
 
 @Component({
   selector: 'app-projekt-liste',

@@ -1,20 +1,20 @@
-.rating{
+.rating {
   /*font-size: x-large; */
   color: orange;
   display: flex;
-  gap: 4px;         /* leer zwischen stars */
+  gap: 4px; /* leer zwischen stars */
 }
 
-i{
-  color: #9c9c9c ;
+i {
+  color: #9c9c9c;
   cursor: pointer;
 }
 
-.active{
+.active {
   color: orange;
 }
 
-.stern{
+.stern {
   font-size: large;
   color: orange;
 }

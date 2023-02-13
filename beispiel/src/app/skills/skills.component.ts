@@ -1,7 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {SkillsService} from "../tabelleskills.service";
-import {Skill} from "../Data";
-import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-skills',

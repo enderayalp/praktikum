@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 
 @Component({
@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./projects-details-dialog.component.css']
 })
 export class ProjectsDetailsDialogComponent {
-  constructor() { }
+  constructor() {
+  }
 
 
 }

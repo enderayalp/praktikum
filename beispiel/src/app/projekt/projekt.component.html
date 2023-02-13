@@ -4,11 +4,15 @@ MARAHA
 
 <div *ngFor="let data of projects">
 
-  <div class="gallery" > <p  class="desc" (click)="title1(data.title)" > {{data.title}} </p> </div>
+  <div class="gallery"><p class="desc" > {{data.title}} </p></div>
 
-  <div class="gallery"> <div class="desc" (click)="title2(data.rolle)"> {{data.rolle}} </div> </div>
+  <div class="gallery">
+    <div class="desc" > {{data.rolle}} </div>
+  </div>
 
-  <div class="gallery"> <div class="desc" (click)="title3(data.beschreibung)"> {{data.beschreibung}} </div> </div>
+  <div class="gallery">
+    <div class="desc" > {{data.beschreibung}} </div>
+  </div>
 
 
 </div>

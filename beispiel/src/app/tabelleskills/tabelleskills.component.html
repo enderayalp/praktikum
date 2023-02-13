@@ -9,14 +9,12 @@
     <th>Ordnen</th>
 
 
-
-
   </tr>
   </thead>
 
   <tbody>
 
-  <ng-container >
+  <ng-container>
 
     <tr *ngFor="let skill of skills">
       <td>
@@ -44,10 +42,11 @@
 
       <td>
         <div class="stern" *ngIf="isEditable(skill)">
-          <ngb-rating type="text" [max]="5"  [readonly]="false"  [(ngModel)]="skill.stars" ></ngb-rating>
+          <ngb-rating type="text" [max]="5" [readonly]="false" [(ngModel)]="skill.stars"></ngb-rating>
         </div>
         <div class="stern" *ngIf="!isEditable(skill)">
-          <ngb-rating type="text" [max]="5"  [readonly]="true"  [(rate)]="skill.stars" ></ngb-rating></div>
+          <ngb-rating type="text" [max]="5" [readonly]="true" [(rate)]="skill.stars"></ngb-rating>
+        </div>
       </td>
 
 

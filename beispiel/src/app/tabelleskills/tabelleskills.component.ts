@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ProjektsService, SkillsService} from "../tabelleskills.service";
-import {Projekt, Skill} from "../Data";
+import {SkillsService} from "../tabelleskills.service";
+import {Skill} from "../Data";
 import {HttpClient} from '@angular/common/http';
-import {filter, map} from 'rxjs/operators';
-import {Observable} from "rxjs";
-import {valueReferenceToExpression} from "@angular/compiler-cli/src/ngtsc/annotations/common";
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-tabelleskills',
@@ -19,7 +17,7 @@ export class TabelleskillsComponent implements OnInit {
 
   currentRate?: Skill;
 
-private url = 'https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/';
+  private url = 'https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/';
 
   constructor(public tabelleskills: SkillsService, private http: HttpClient) {
     this.skills = [];
@@ -52,8 +50,8 @@ private url = 'https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/';
         .pipe(
           map(savedSkill => {
             this.skills.push(savedSkill);
-            this.skills.forEach((skill,index)=>{
-              if(!skill.id) this.skills.splice(index,1);
+            this.skills.forEach((skill, index) => {
+              if (!skill.id) this.skills.splice(index, 1);
             });
             return this.skills;
           })
@@ -74,15 +72,16 @@ private url = 'https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/';
 
   deleteSkill(skill) {
 
-    this.http.delete(this.url + '/' + skill.id).subscribe(response => { console.log(response);
-    let index = this.skills.indexOf(skill);
-    this.skills.splice(index, 1);
+    this.http.delete(this.url + '/' + skill.id).subscribe(response => {
+      console.log(response);
+      let index = this.skills.indexOf(skill);
+      this.skills.splice(index, 1);
     })
   }
 
   addEmptySkillToSkills() {
 
-    const emptySkill ={
+    const emptySkill = {
       name: "",
       years: "",
       lastUsed: "",
@@ -92,14 +91,14 @@ private url = 'https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/';
     };
     this.skills.push(emptySkill);
     return this.skills;
-    }
+  }
 
   isEditable(skill: Skill) {
-        return this.editableSkill === skill;
+    return this.editableSkill === skill;
   }
 
   isCurrent(skill: Skill) {
     return this.currentRate === skill;
-     }
-
   }
+
+}

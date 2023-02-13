@@ -5,7 +5,8 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": false,    //zorunlu atama hatasi almamak icin false yapildi
+    "strict": false,
+    //zorunlu atama hatasi almamak icin false yapildi
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -16,7 +17,8 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "allowSyntheticDefaultImports": true,   //man wurde später hinzugefügt
+    "allowSyntheticDefaultImports": true,
+    //man wurde später hinzugefügt
     "target": "ES2022",
     "module": "es2020",
     "strictNullChecks": true,

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FaehigkeitListeComponent } from './projekt-liste.component';
+import {FaehigkeitListeComponent} from './projekt-liste.component';
 
 describe('FaehigkeitListeComponent', () => {
   let component: FaehigkeitListeComponent;
@@ -8,9 +8,9 @@ describe('FaehigkeitListeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FaehigkeitListeComponent ]
+      declarations: [FaehigkeitListeComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(FaehigkeitListeComponent);
     component = fixture.componentInstance;
