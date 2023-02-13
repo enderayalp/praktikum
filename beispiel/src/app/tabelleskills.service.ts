@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Projekt, Skill} from "./Data";
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 
 
 function Update(ref: any, param2: { id: any }) {}
