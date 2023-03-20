@@ -13,7 +13,7 @@ import {HomeService} from "../home.service";
 })
 export class HomeComponent implements OnInit {
 
-  editableSkill?: UserHome;
+  editableHome?: UserHome;
 
   userhome: UserHome[];
 
@@ -21,22 +21,21 @@ export class HomeComponent implements OnInit {
 
   disabledBox=true;
 
-  constructor(public tabelleskills: HomeService, private http: HttpClient) {
+  constructor(public homeService: HomeService, private http: HttpClient) {
     this.userhome = [];
-
   }
 
   ngOnInit(): void {
-    this.tabelleskills.getAllUser().subscribe((userhome: UserHome[]) => this.userhome = userhome);
+    this.homeService.getAllUser().subscribe((userhome: UserHome[]) => this.userhome = userhome);
   }
 
   update() {
     const change = {
-      title: this.editableSkill?.title
+      title: this.editableHome?.title
     };
 
-    if (this.editableSkill?.id) { //falsy / truthy
-      return this.http.put<UserHome>(`https://6409d14f6ecd4f9e18bc17e6.mockapi.io/api/UserHome/${this.editableSkill?.id}`, change)
+    if (this.editableHome?.id) { //falsy / truthy
+      return this.http.put<UserHome>(`https://6409d14f6ecd4f9e18bc17e6.mockapi.io/api/UserHome/${this.editableHome?.id}`, change)
         .subscribe((newSkill: UserHome) =>
           this.userhome = this.userhome.map(tableSkill => {
               return tableSkill.id === newSkill.id ? newSkill : tableSkill;     //man kann update machen mit put. man kann mit post daten geschrieben werden
@@ -45,7 +44,7 @@ export class HomeComponent implements OnInit {
         );
 
     } else {
-      return this.http.post<UserHome>('https://6409d14f6ecd4f9e18bc17e6.mockapi.io/api/UserHome', this.editableSkill)
+      return this.http.post<UserHome>('https://6409d14f6ecd4f9e18bc17e6.mockapi.io/api/UserHome', this.editableHome)
         .pipe(
           map(savedSkill => {
             this.userhome.push(savedSkill);
@@ -61,13 +60,13 @@ export class HomeComponent implements OnInit {
 
   onEdit(skill: UserHome) {
 
-    this.editableSkill = skill;
+    this.editableHome = skill;
     this.disabledBox=false;
     // return this.currentRate === skill
   }
 
   cancelEdit() {
-    this.editableSkill = undefined;
+    this.editableHome = undefined;
   }
 
   deleteSkill(skill) {
@@ -84,22 +83,8 @@ export class HomeComponent implements OnInit {
   }
 
 
-  addEmptySkillToSkills() {
-
-    const emptySkill = {
-      title: ""
-      // years: "",
-      // lastUsed: "",
-      // currentRate: 0,
-      // stars: 0
-
-    };
-    this.userhome.push(emptySkill);
-    return this.userhome;
-  }
-
   isEditable(skill: UserHome) {
-    return this.editableSkill === skill;
+    return this.editableHome === skill;
   }
 
 

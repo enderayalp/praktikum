@@ -15,7 +15,7 @@ type Viewstate = 'list' | 'details'
 export class ProjektComponent implements OnInit {
 
   projects: Projekt[];
-  projektListe: Projekt[];
+
 
   project: Projekt;
   viewState: Viewstate = 'list';
@@ -28,9 +28,8 @@ export class ProjektComponent implements OnInit {
     this.project = project;
     this.viewState = 'details';
   }
-  private url = 'https://63e50f338e1ed4ccf6eccc48.mockapi.io/api/Faehigkeiten';
 
-  constructor(private projektService: ProjektService, private http: HttpClient) {
+  constructor() {
 
     this.projects = [];
   }
@@ -38,9 +37,4 @@ export class ProjektComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getProjektListe() {
-
-console.log("projekt.component");
-
-  }
 }
