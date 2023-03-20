@@ -1,8 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {Projekt} from "../Data";
 import {HttpClient} from "@angular/common/http";
 import {ProjektService} from "../projekt.service";
 
+
+type Viewstate = 'list' | 'details'
 
 @Component({
   selector: 'app-projekt',
@@ -13,6 +15,20 @@ import {ProjektService} from "../projekt.service";
 export class ProjektComponent implements OnInit {
 
   projects: Projekt[];
+  projektListe: Projekt[];
+
+  project: Projekt;
+  viewState: Viewstate = 'list';
+
+  showList(){
+    this.viewState = 'list';
+  }
+
+  showDetails(project: Projekt){
+    this.project = project;
+    this.viewState = 'details';
+  }
+  private url = 'https://63e50f338e1ed4ccf6eccc48.mockapi.io/api/Faehigkeiten';
 
   constructor(private projektService: ProjektService, private http: HttpClient) {
 
@@ -20,9 +36,11 @@ export class ProjektComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.projektService.getAllProjekts().subscribe((projects: Projekt[]) => this.projects = projects);
   }
 
-}
+  getProjektListe() {
 
+console.log("projekt.component");
+
+  }
+}

@@ -1,3 +1,102 @@
-<h2>Welcome</h2>
+<!--<h2>Project_Details_Dialog</h2>-->
+<!--<br><br>-->
+
+<!--<div class="change" *ngIf="project">-->
+
+<!--  <h1>Title:  <h5>{{project.title}}</h5> </h1> <br>-->
+<!--  <h1>Rolle: <h5>{{project.rolle}}</h5> </h1><br>-->
+<!--  <h1>Beschreibung: <h5>{{project.beschreibung}}</h5> </h1><br>-->
+<!--  <h1>Zeitraum: <h5>{{project.Zeitraum}}</h5> </h1><br>-->
+<!--  <h1>VerwendeteTechnologien: <h5>{{project.verwendeteTechnologien}}</h5> </h1><br>-->
+<!--  <h1>EigeneTaetigkeitenImProjekt: <h5>{{project.EigeneTaetigkeitenImProjekt}}</h5> </h1><br>-->
+<!--  <h1>BesondereHerausforderung: <h5>{{project.BesondereHerausforderung}}</h5> </h1><br>-->
+
+  <button class="btn btn-danger" (click)="showProjectList()"> Zurück zur Projektliste </button>
 
 
+<div>
+
+  <ng-container>
+
+    <tr *ngFor="let skill of projekt">
+      <td>
+        <div *ngIf="isEditable(skill)"> Title
+          <input type="text" [(ngModel)]="skill.title" class="form-control"/>
+        </div>
+        <div *ngIf="!isEditable(skill)"> {{skill.title}}</div>
+      </td>
+
+
+
+
+<!--      <td>-->
+<!--        <div *ngIf="isEditable(skill)">-->
+<!--          <input type="text" [(ngModel)]="skill.rolle" class="form-control"/>-->
+<!--        </div>-->
+<!--        <div *ngIf="!isEditable(skill)"> {{skill.rolle}} </div>-->
+<!--      </td>-->
+
+<!--      <td>-->
+<!--        <div *ngIf="isEditable(skill)">-->
+<!--          <input type="text" [(ngModel)]="skill.beschreibung" class="form-control"/>-->
+<!--        </div>-->
+<!--        <div *ngIf="!isEditable(skill)"> {{skill.beschreibung}}</div>-->
+<!--      </td>-->
+
+<!--      <td>-->
+<!--        <div *ngIf="isEditable(skill)">-->
+<!--          <input type="text" [(ngModel)]="skill.Zeitraum" class="form-control"/>-->
+<!--        </div>-->
+<!--        <div *ngIf="!isEditable(skill)"> {{skill.Zeitraum}}</div>-->
+<!--      </td>-->
+
+<!--      <td>-->
+<!--        <div *ngIf="isEditable(skill)">-->
+<!--          <input type="text" [(ngModel)]="skill.verwendeteTechnologien" class="form-control"/>-->
+<!--        </div>-->
+<!--        <div *ngIf="!isEditable(skill)"> {{skill.verwendeteTechnologien}}</div>-->
+<!--      </td>-->
+
+<!--      <td>-->
+<!--        <div *ngIf="isEditable(skill)">-->
+<!--          <input type="text" [(ngModel)]="skill.EigeneTaetigkeitenImProjekt" class="form-control"/>-->
+<!--        </div>-->
+<!--        <div *ngIf="!isEditable(skill)"> {{skill.EigeneTaetigkeitenImProjekt}}</div>-->
+<!--      </td>-->
+
+<!--      <td>-->
+<!--        <div *ngIf="isEditable(skill)">-->
+<!--          <input type="text" [(ngModel)]="skill.BesondereHerausforderung" class="form-control"/>-->
+<!--        </div>-->
+<!--        <div *ngIf="!isEditable(skill)"> {{skill.BesondereHerausforderung}}</div>-->
+<!--      </td>-->
+
+
+      <td>
+        <div *ngIf="isEditable(skill)">
+          <button class="btn btn-sm btn-success" (click)="update()">Update</button>
+          <button class="btn btn-sm btn-danger" (click)="cancelEdit()">Cancel</button>
+          <button class="btn btn-sm btn-success" (click)="deleteSkill(editableSkill)">Delete</button>
+
+
+        </div>
+
+        <div *ngIf="!isEditable(skill)">
+          <button class="btn btn-sm btn-success" (click)="onEdit(skill)">Edit</button>
+
+        </div>
+      </td>
+
+    </tr>
+
+    <button class="btn btn-sm btn-success" (click)="addEmptySkillToSkills()">Add</button>
+
+
+
+
+
+
+
+  </ng-container>
+</div>
+<!--</div>-->

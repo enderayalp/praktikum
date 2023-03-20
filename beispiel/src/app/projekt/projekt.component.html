@@ -1,22 +1,47 @@
-<br> <br> <br>
-MARAHA
-<body>
 
-<div *ngFor="let data of projects">
-
-  <div class="gallery"><p class="desc" > {{data.title}} </p></div>
-
-  <div class="gallery">
-    <div class="desc" > {{data.rolle}} </div>
-  </div>
-
-  <div class="gallery">
-    <div class="desc" > {{data.beschreibung}} </div>
-  </div>
+<app-projekt-liste  *ngIf="viewState === 'list'" (showDetailsEvent)="showDetails($event)" >  </app-projekt-liste>
 
 
-</div>
+<app-projects-details-dialog *ngIf="viewState === 'details'" (showListEvent)="showList()" [project]="project" >   </app-projects-details-dialog>
+
+<router-outlet></router-outlet>
 
 
-</body>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<br> <br> <br>-->
+
+
+
+<!--  <div class="gallery">-->
+<!--    <div class="desc">-->
+<!--      Java Backend Entwicklung in Springboot. , Schnittstellendesign und Implementierung. , Auftragsanlage / Bearbeitung / Versionierung.-->
+<!--      , Kundenanlage/Altkundenmigration. , Diverse Produktfeatures. , Datenbankentwurf.-->
+<!--      Eigesetzte Technologien-->
+<!--      Angular , JavaScript , CSS , HTML , Java , TypeScript , Microservices , REST , Spring DI, AOP, Boot , SCRUM ,-->
+<!--      JIRA , Maven , GIT , GITLab , JUnit , IntelliJ , Kubernetes , Keycloak , Docker-->
+<!--    </div>-->
+<!--  </div>-->

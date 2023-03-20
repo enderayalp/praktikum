@@ -71,13 +71,18 @@ export class TabelleskillsComponent implements OnInit {
   }
 
   deleteSkill(skill) {
-
-    this.http.delete(this.url + '/' + skill.id).subscribe(response => {
-      console.log(response);
-      let index = this.skills.indexOf(skill);
-      this.skills.splice(index, 1);
-    })
+    if(confirm("Möchten Sie löschen ?")){
+      if(confirm("Sicher ?")){
+      this.http.delete(this.url + '/' + skill.id).subscribe(response => {
+        console.log(response);
+        let index = this.skills.indexOf(skill);
+        this.skills.splice(index, 1);
+      })
+    }
+     else {}
+    }
   }
+
 
   addEmptySkillToSkills() {
 
@@ -97,8 +102,8 @@ export class TabelleskillsComponent implements OnInit {
     return this.editableSkill === skill;
   }
 
-  isCurrent(skill: Skill) {
-    return this.currentRate === skill;
-  }
+  // isCurrent(skill: Skill) {
+  //   return this.currentRate === skill;
+  // }
 
 }

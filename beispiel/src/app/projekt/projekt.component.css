@@ -1,0 +1,38 @@
+p {
+  padding-left: 15px;
+}
+
+.gallery {
+  margin: 10px;
+  border: 1px solid black;
+  float: left;
+  width: 750px;
+  height: 500px;
+  /*float: left;*/
+  padding: 38px 36px;
+  left: 79%;
+  cursor: pointer;
+  text-align: center;
+  width: 11%;
+
+}
+
+.desc {
+  padding: 3px;
+  font-weight: bold;
+  text-align: left;
+
+}
+
+.gallery img {
+  width: 100%;
+
+}
+
+.gallery:hover {
+  border: 1px solid black;
+  box-shadow: 0 8px 16px 0 gray;
+
+}
+
+

@@ -12,7 +12,15 @@ export interface Projekt {
   title: string;
   rolle: string;
   beschreibung: string;
+  Zeitraum: string;
+  verwendeteTechnologien: string;
+  EigeneTaetigkeitenImProjekt: string;
+  BesondereHerausforderung: string;
+  id?: number;
+
 }
 
-
-
+export interface UserHome {
+  id?: number;
+title: string;
+}

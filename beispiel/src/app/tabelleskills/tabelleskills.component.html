@@ -1,97 +1,75 @@
-<table class="table table-hover table-striped">
+  <table class="table table-hover table-striped">
 
-  <thead>
-  <tr>
-    <th>Technologie</th>
-    <th>Erfahrung in Jahren</th>
-    <th>Zuletz Verwendet</th>
-    <th>Rating</th>
-    <th>Ordnen</th>
+    <thead>
+    <tr>
+      <th>Technologie</th>
+      <th>Erfahrung in Jahren</th>
+      <th>Zuletz Verwendet</th>
+      <th>Rating</th>
+      <th>Ordnen</th>
 
-
-  </tr>
-  </thead>
-
-  <tbody>
-
-  <ng-container>
-
-    <tr *ngFor="let skill of skills">
-      <td>
-        <div *ngIf="isEditable(skill)">
-          <input type="text" [(ngModel)]="skill.name" class="form-control"/>
-        </div>
-        <div *ngIf="!isEditable(skill)"> {{skill.name}}</div>
-      </td>
-
-
-      <td>
-        <div *ngIf="isEditable(skill)">
-          <input type="text" [(ngModel)]="skill.years" class="form-control"/>
-        </div>
-        <div *ngIf="!isEditable(skill)"> {{skill.years}} </div>
-      </td>
-
-      <td>
-        <div *ngIf="isEditable(skill)">
-          <input type="text" [(ngModel)]="skill.lastUsed" class="form-control"/>
-        </div>
-        <div *ngIf="!isEditable(skill)"> {{skill.lastUsed}}</div>
-      </td>
-
-
-      <td>
-        <div class="stern" *ngIf="isEditable(skill)">
-          <ngb-rating type="text" [max]="5" [readonly]="false" [(ngModel)]="skill.stars"></ngb-rating>
-        </div>
-        <div class="stern" *ngIf="!isEditable(skill)">
-          <ngb-rating type="text" [max]="5" [readonly]="true" [(rate)]="skill.stars"></ngb-rating>
-        </div>
-      </td>
-
-
-      <td>
-        <div *ngIf="isEditable(skill)">
-          <button class="btn btn-sm btn-success" (click)="update()">Update</button>
-          <button class="btn btn-sm btn-danger" (click)="cancelEdit()">Cancel</button>
-          <button class="btn btn-sm btn-success" (click)="deleteSkill(editableSkill)">Delete</button>
-
-
-        </div>
-
-        <div *ngIf="!isEditable(skill)">
-          <button class="btn btn-sm btn-success" (click)="onEdit(skill)">Edit</button>
-
-        </div>
-      </td>
 
     </tr>
+    </thead>
 
-    <button class="btn btn-sm btn-success" (click)="addEmptySkillToSkills()">Add</button>
+    <tbody>
 
+    <ng-container>
 
-  </ng-container>
-  </tbody>
-</table>
-
-
-
-
-
-
-
-
+      <tr *ngFor="let skill of skills">
+        <td>
+          <div *ngIf="isEditable(skill)">
+            <input type="text" [(ngModel)]="skill.name" class="form-control"/>
+          </div>
+          <div *ngIf="!isEditable(skill)"> {{skill.name}}</div>
+        </td>
 
 
+        <td>
+          <div *ngIf="isEditable(skill)">
+            <input type="text" [(ngModel)]="skill.years" class="form-control"/>
+          </div>
+          <div *ngIf="!isEditable(skill)"> {{skill.years}} </div>
+        </td>
+
+        <td>
+          <div *ngIf="isEditable(skill)">
+            <input type="text" [(ngModel)]="skill.lastUsed" class="form-control"/>
+          </div>
+          <div *ngIf="!isEditable(skill)"> {{skill.lastUsed}}</div>
+        </td>
 
 
+        <td>
+          <div class="stern" *ngIf="isEditable(skill)">
+            <ngb-rating type="text" [max]="5" [readonly]="false" [(ngModel)]="skill.stars"></ngb-rating>
+          </div>
+          <div class="stern" *ngIf="!isEditable(skill)">
+            <ngb-rating type="text" [max]="5" [readonly]="true" [(rate)]="skill.stars"></ngb-rating>
+          </div>
+        </td>
 
 
+        <td>
+          <div *ngIf="isEditable(skill)">
+            <button class="btn btn-sm btn-success" (click)="update()">Update</button>
+            <button class="btn btn-sm btn-danger" (click)="cancelEdit()">Cancel</button>
+            <button class="btn btn-sm btn-success" (click)="deleteSkill(editableSkill)">Delete</button>
 
 
+          </div>
+
+          <div *ngIf="!isEditable(skill)">
+            <button class="btn btn-sm btn-success" (click)="onEdit(skill)">Edit</button>
+
+          </div>
+        </td>
+
+      </tr>
+
+      <button class="btn btn-sm btn-success" (click)="addEmptySkillToSkills()">Add</button>
 
 
-
-
-
-
+    </ng-container>
+    </tbody>
+  </table>

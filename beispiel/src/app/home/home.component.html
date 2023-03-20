@@ -1,3 +1,173 @@
-<br> <br> <h1> Home Component</h1>
+<br> <br>
+<!--  <div class="change" >-->
+<!--    <b> Hi, ich bin Sümeyye!<br>-->
+
+<!--    Freiberuflicher Junior Softwareentwickler aus Leidenschaft </b><br><br>-->
+
+<!--    Ich bin zertifizierter OCP Oracle Certified Professional Java Entwickler.<br>-->
+
+<!--    Meine stärken liegen in der Entwicklung in Spring Boot und Rest!<br>-->
+
+<!--    Angular, JSF, HTML und CSS befinden sich natürlich in meinem Portfolio.<br><br>-->
+
+<!--    Die Webseite auf der Du Dich gerade befindest habe ich mit Angular erstellt,-->
+
+<!--    Wenn du Lust hast schaue Dir den Sourcecode bei mir auf GitHub an!-->
+
+<!--    <a href="https://github.com/sümeyye" target="_blank">https://github.com/sümeyye</a>-->
+
+
+<!--    </div>-->
+
+<!--<img class="bild" src="assets/IMG-20220717-WA0000.jpg">-->
+
+<!--<div> <input {{ homeText }}> </div>-->
+
+
+
+
+
+
+
+
+<table class="table table-hover table-striped">
+
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th>Technologie</th>-->
+<!--    <th>Erfahrung in Jahren</th>-->
+<!--    <th>Zuletz Verwendet</th>-->
+<!--    <th>Rating</th>-->
+<!--    <th>Ordnen</th>-->
+
+
+<!--  </tr>-->
+<!--  </thead>-->
+
+  <tbody>
+
+  <ng-container>
+
+<!--    <tr >-->
+<!--      <td>-->
+<!--        <div >-->
+
+<!--        </div>-->
+<!--        <div </div>-->
+<!--      </td>-->
+
+
+
+
+      <div *ngFor="let skill of userhome" >
+        <input type="text" [(ngModel)]="skill.title" class="form-control"  [disabled]="disabledBox" />
+        <div *ngIf="isEditable(skill)" >
+
+          <div *ngIf="!isEditable(skill)"> {{skill.title}}>
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+<!--      <td>-->
+<!--        <div *ngIf="isEditable(skill)">-->
+<!--          <input type="text" [(ngModel)]="skill.years" class="form-control"/>-->
+<!--        </div>-->
+<!--        <div *ngIf="!isEditable(skill)"> {{skill.years}} </div>-->
+<!--      </td>-->
+
+<!--      <td>-->
+<!--        <div *ngIf="isEditable(skill)">-->
+<!--          <input type="text" [(ngModel)]="skill.lastUsed" class="form-control"/>-->
+<!--        </div>-->
+<!--        <div *ngIf="!isEditable(skill)"> {{skill.lastUsed}}</div>-->
+<!--      </td>-->
+
+
+<!--      <td>-->
+<!--        <div class="stern" *ngIf="isEditable(skill)">-->
+<!--          <ngb-rating type="text" [max]="5" [readonly]="false" [(ngModel)]="skill.stars"></ngb-rating>-->
+<!--        </div>-->
+<!--        <div class="stern" *ngIf="!isEditable(skill)">-->
+<!--          <ngb-rating type="text" [max]="5" [readonly]="true" [(rate)]="skill.stars"></ngb-rating>-->
+<!--        </div>-->
+<!--      </td>-->
+
+
+<!--      <td>-->
+        <div *ngIf="isEditable(skill)">
+          <button class="btn btn-sm btn-success" (click)="update()">Update</button>
+          <button class="btn btn-sm btn-danger" (click)="cancelEdit()">Cancel</button>
+          <button class="btn btn-sm btn-success" (click)="deleteSkill(editableSkill)">Delete</button>
+
+
+        </div>
+
+        <div *ngIf="!isEditable(skill)">
+          <button class="btn btn-sm btn-success" (click)="onEdit(skill)">Edit</button>
+
+        </div>
+<!--      </td>-->
+
+<!--    </tr>-->
+
+
+
+      </div>
+  </ng-container>
+  </tbody>
+</table>
+<!--  </div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

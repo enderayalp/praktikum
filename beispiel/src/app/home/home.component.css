@@ -1,3 +1,44 @@
-h1 {
-  padding-left: 15px;
+.form-control{
+  margin: 5px;
+  border: 1px solid gray;
+
+  width: 950px;
+  height: 600px;
+  /*float: left;*/
+  padding: 50px 36px;
+  left: 79%;
+  cursor: pointer;
+  /*float: bottom;*/
+  font-size: 35px;
+  border-radius: 10px;
+  word-break: break-word;
+  display: block;
+
+  overflow: scroll;
+
 }
+
+.change {
+  border: none;
+  margin: 100px;
+  margin-bottom: 50px;
+  padding-left: 5px;
+  max-width: 980px;
+  max-height: 700px;
+  font-size: 25px;
+}
+.bild {
+  position: absolute;
+  border-style: groove;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30%;
+  height: 40% ;
+  padding: 10px;
+  background-attachment: fixed;
+  top: 225px;
+  right: 30%;
+  border-radius: 92px ;
+}
+
+

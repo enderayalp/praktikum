@@ -1,7 +1,26 @@
 a {
-  margin: 15px;
-  margin-top: 15px;
-  padding: 25px;
+  margin: 0px;
+  margin-top: 0px;
+  padding: -5px;
   font-size: 25px;
   padding-left: 25px;
+  text-decoration: none;
+  color: black;
 }
+.navbar{
+  cursor: pointer;
+  top: 10px;
+  padding: 10px 500px;
+}
+
+a:hover{
+  color: red;
+  transition: 0.5s;
+}
+a:focus{
+  color: red;
+}
+a:active{
+  color: blue;
+  background-color: orange;
+  }

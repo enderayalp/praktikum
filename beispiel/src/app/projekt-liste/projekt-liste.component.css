@@ -11,16 +11,19 @@ p {
   /*float: left;*/
   padding: 38px 36px;
   left: 79%;
-  cursor: pointer;
+
   text-align: center;
   width: 11%;
 
 }
 
 .desc {
-  padding: 5px;
+  color: black;
+  padding: 55px;
   font-weight: bold;
   text-align: left;
+  cursor: pointer;
+
 
 }
 
