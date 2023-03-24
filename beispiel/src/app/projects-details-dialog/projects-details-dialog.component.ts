@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Projekt, UserHome} from "../Data";
-// import {HomeService} from "../home.service";
+import {Projekt} from "../Data";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
 import {ProjektService} from "../projekt.service";
@@ -16,23 +15,18 @@ export class ProjectsDetailsDialogComponent implements OnInit{    //implements O
   @Input() project: Projekt;
   @Output() showListEvent = new EventEmitter<any>();
 
-  // constructor() {
+
+  // getRating(num: number){
+  //   return new Array(num);
   // }
   //
-  // ngOnInit(): void {
-  // }
-
-  getRating(num: number){
-    return new Array(num);
-  }
-
   showProjectList(){
     this.showListEvent.emit();
   }
 
 
 
-  editableSkill?: Projekt;
+  editableProjekt?: Projekt;
 
   projekt: Projekt[];
 
@@ -51,17 +45,17 @@ export class ProjectsDetailsDialogComponent implements OnInit{    //implements O
 
   update() {
     const change = {
-      title: this.editableSkill?.title,
-      rolle: this.editableSkill?.rolle,
-      beschreibung: this.editableSkill?.beschreibung,
-      Zeitraum: this.editableSkill?.Zeitraum,
-      verwendeteTechnologien: this.editableSkill?.verwendeteTechnologien,
-      EigeneTaetigkeitenImProjekt: this.editableSkill?.EigeneTaetigkeitenImProjekt,
-      BesondereHerausforderung: this.editableSkill?.BesondereHerausforderung,
+      title: this.editableProjekt?.title,
+      rolle: this.editableProjekt?.rolle,
+      beschreibung: this.editableProjekt?.beschreibung,
+      Zeitraum: this.editableProjekt?.Zeitraum,
+      verwendeteTechnologien: this.editableProjekt?.verwendeteTechnologien,
+      EigeneTaetigkeitenImProjekt: this.editableProjekt?.EigeneTaetigkeitenImProjekt,
+      BesondereHerausforderung: this.editableProjekt?.BesondereHerausforderung,
     };
 
-    if (this.editableSkill?.id) { //falsy / truthy
-      return this.http.put<Projekt>(`https://63e50f338e1ed4ccf6eccc48.mockapi.io/api/Faehigkeiten/${this.editableSkill?.id}`, change)
+    if (this.editableProjekt?.id) { //falsy / truthy
+      return this.http.put<Projekt>(`https://63e50f338e1ed4ccf6eccc48.mockapi.io/api/Faehigkeiten/${this.editableProjekt?.id}`, change)
         .subscribe((newSkill: Projekt) =>
           this.projekt = this.projekt.map(tableSkill => {
               return tableSkill.id === newSkill.id ? newSkill : tableSkill;     //man kann update machen mit put. man kann mit post daten geschrieben werden
@@ -70,7 +64,7 @@ export class ProjectsDetailsDialogComponent implements OnInit{    //implements O
         );
 
     } else {
-      return this.http.post<Projekt>('https://63e50f338e1ed4ccf6eccc48.mockapi.io/api/Faehigkeiten', this.editableSkill)
+      return this.http.post<Projekt>('https://63e50f338e1ed4ccf6eccc48.mockapi.io/api/Faehigkeiten', this.editableProjekt)
         .pipe(
           map(savedSkill => {
             this.projekt.push(savedSkill);
@@ -85,12 +79,12 @@ export class ProjectsDetailsDialogComponent implements OnInit{    //implements O
   }
 
   onEdit(skill: Projekt) {
-    this.editableSkill = skill;
+    this.editableProjekt = skill;
     this.disabledBox=false
   }
 
   cancelEdit() {
-    this.editableSkill = undefined;
+    this.editableProjekt = undefined;
   }
 
   deleteSkill(skill) {
@@ -116,14 +110,14 @@ export class ProjectsDetailsDialogComponent implements OnInit{    //implements O
       verwendeteTechnologien: "",
       EigeneTaetigkeitenImProjekt: "",
       BesondereHerausforderung: ""
-
     };
+
     this.projekt.push(emptySkill);
     return this.projekt;
   }
 
   isEditable(skill: Projekt) {
-    return this.editableSkill === skill;
+    return this.editableProjekt === skill;
   }
 }
 

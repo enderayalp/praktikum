@@ -1,0 +1,73 @@
+<br> <br>
+<div class="body">
+  <table class="table table-hover table-striped">
+    <tbody>
+    <ng-container>
+      <div *ngFor="let Mitarbeiter of mitarbeiter">
+        <input type="text" [(ngModel)]="Mitarbeiter.title" class="form-control" [disabled]="disabledBox"/>
+        <div *ngIf="isEditable(Mitarbeiter)">
+          <div *ngIf="!isEditable(Mitarbeiter)"> {{Mitarbeiter.title}}>
+          </div>
+        </div>
+        <div *ngIf="isEditable(Mitarbeiter)">
+          <button class="btn btn-sm btn-success" (click)="update()">Update</button>
+          <button class="btn btn-sm btn-danger" (click)="cancelEdit()">Cancel</button>
+          <button class="btn btn-sm btn-success" (click)="deleteSkill(editablemitarbeiter)">Delete</button>
+        </div>
+        <div *ngIf="!isEditable(Mitarbeiter)">
+          <button class="btn btn-sm btn-success" (click)="onEdit(Mitarbeiter)">Edit</button>
+        </div>
+        <div class="bild">
+          <img src="assets/IMG-20220717-WA0000.jpg" width="550" height="780">
+        </div>
+      </div>
+    </ng-container>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

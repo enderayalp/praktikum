@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HomeComponent} from "./home/home.component";
+import {MitarbeiterKurzvorstellungComponent} from "./home/mitarbeiter-kurzvorstellung.component";
 import {HttpClientModule} from "@angular/common/http";
 import {SkillsComponent} from './skills/skills.component';
 import {ProjektComponent} from './projekt/projekt.component';
@@ -13,17 +13,19 @@ import {ProjectsDetailsDialogComponent} from './projects-details-dialog/projects
 import {MatDialogModule} from "@angular/material/dialog";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ProjektListeComponent} from './projekt-liste/projekt-liste.component';
+import { SucheComponent } from './suche/suche.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    MitarbeiterKurzvorstellungComponent,
     SkillsComponent,
     ProjektComponent,
     TabelleskillsComponent,
     ProjectsDetailsDialogComponent,
     ProjektListeComponent,
+    SucheComponent,
   ],
 
 

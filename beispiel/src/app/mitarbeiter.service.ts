@@ -3,20 +3,24 @@ import {Skill, Mitarbeiter} from "./Data";
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class SkillsService {
-  skills: Skill[];
+export class MitarbeiterService {
 
+  mitarbeiter: Mitarbeiter[];
 
-  getAllSkills(): Observable<Skill[]> {
-    return this.http.get<Skill[]>('https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill');
+  getAllUser(): Observable<Mitarbeiter[]> {
+    return this.http.get<Mitarbeiter[]>('https://6409d14f6ecd4f9e18bc17e6.mockapi.io/api/UserHome');
   }
 
   constructor(private http: HttpClient) {
-    this.skills = []
+    this.mitarbeiter = []
   }
 
 }
+
+
+
+
+

@@ -20,7 +20,7 @@ export interface Projekt {
 
 }
 
-export interface UserHome {
+export interface Mitarbeiter {
   id?: number;
 title: string;
 }

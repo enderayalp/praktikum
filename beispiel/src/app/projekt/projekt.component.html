@@ -1,47 +1,10 @@
+<app-projekt-liste *ngIf="viewState === 'list'" (showDetailsEvent)="showDetails($event)"></app-projekt-liste>
 
-<app-projekt-liste  *ngIf="viewState === 'list'" (showDetailsEvent)="showDetails($event)" >  </app-projekt-liste>
 
-
-<app-projects-details-dialog *ngIf="viewState === 'details'" (showListEvent)="showList()" [project]="project" >   </app-projects-details-dialog>
+<app-projects-details-dialog *ngIf="viewState === 'details'" (showListEvent)="showList()"
+                             [project]="project"></app-projects-details-dialog>
 
 <router-outlet></router-outlet>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<br> <br> <br>-->
-
-
-
-<!--  <div class="gallery">-->
-<!--    <div class="desc">-->
-<!--      Java Backend Entwicklung in Springboot. , Schnittstellendesign und Implementierung. , Auftragsanlage / Bearbeitung / Versionierung.-->
-<!--      , Kundenanlage/Altkundenmigration. , Diverse Produktfeatures. , Datenbankentwurf.-->
-<!--      Eigesetzte Technologien-->
-<!--      Angular , JavaScript , CSS , HTML , Java , TypeScript , Microservices , REST , Spring DI, AOP, Boot , SCRUM ,-->
-<!--      JIRA , Maven , GIT , GITLab , JUnit , IntelliJ , Kubernetes , Keycloak , Docker-->
-<!--    </div>-->
-<!--  </div>-->

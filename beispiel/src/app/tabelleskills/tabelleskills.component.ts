@@ -10,41 +10,27 @@ import {map} from 'rxjs/operators';
   styleUrls: ['./tabelleskills.component.css']
 })
 export class TabelleskillsComponent implements OnInit {
-
   skills: Skill[];
-
   editableSkill?: Skill;
-
   currentRate?: Skill;
-
   private url = 'https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/';
-
   constructor(public tabelleskills: SkillsService, private http: HttpClient) {
     this.skills = [];
-
   }
-
-  ngOnInit(): void {
-    this.tabelleskills.getAllSkills().subscribe((skills: Skill[]) => this.skills = skills);
-  }
-
+  ngOnInit(): void {  this.tabelleskills.getAllSkills().subscribe((skills: Skill[]) => this.skills = skills);  }
   update() {
-    const change = {
+    const body = {
       name: this.editableSkill?.name,
       years: this.editableSkill?.years,
       lastUsed: this.editableSkill?.lastUsed,
       stars: this.editableSkill?.stars
     };
-
-    if (this.editableSkill?.id) { //falsy / truthy
-      return this.http.put<Skill>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.editableSkill?.id}`, change)
+    if (this.editableSkill?.id) {
+      return this.http.put<Skill>(`https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill/${this.editableSkill?.id}`, body)
         .subscribe((newSkill: Skill) =>
           this.skills = this.skills.map(tableSkill => {
-              return tableSkill.id === newSkill.id ? newSkill : tableSkill;     //man kann update machen mit put. man kann mit post daten geschrieben werden
-            }
-          )
-        );
-
+              return tableSkill.id === newSkill.id ? newSkill : tableSkill;
+            }   )    );
     } else {
       return this.http.post<Skill>('https://6388bc57a4bb27a7f79036af.mockapi.io/lebenslauf/skill', this.editableSkill)
         .pipe(
@@ -56,12 +42,9 @@ export class TabelleskillsComponent implements OnInit {
             return this.skills;
           })
         )
-        .subscribe();
-    }
-  }
+        .subscribe();    }  }
 
   onEdit(skill: Skill) {
-
     this.editableSkill = skill;
     return this.currentRate === skill
   }
@@ -71,39 +54,41 @@ export class TabelleskillsComponent implements OnInit {
   }
 
   deleteSkill(skill) {
-    if(confirm("Möchten Sie löschen ?")){
-      if(confirm("Sicher ?")){
-      this.http.delete(this.url + '/' + skill.id).subscribe(response => {
-        console.log(response);
-        let index = this.skills.indexOf(skill);
-        this.skills.splice(index, 1);
-      })
-    }
-     else {}
+    if (confirm("Möchten Sie löschen ?")) {
+      if (confirm("Sicher ?")) {
+        this.http.delete(this.url + '/' + skill.id).subscribe(response => {
+          let index = this.skills.indexOf(skill);
+          this.skills.splice(index, 1);
+        })
+      } else {
+      }
     }
   }
-
-
   addEmptySkillToSkills() {
-
     const emptySkill = {
       name: "",
       years: "",
       lastUsed: "",
       currentRate: 0,
       stars: 0
-
     };
     this.skills.push(emptySkill);
     return this.skills;
   }
-
   isEditable(skill: Skill) {
     return this.editableSkill === skill;
   }
-
-  // isCurrent(skill: Skill) {
-  //   return this.currentRate === skill;
-  // }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

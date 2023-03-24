@@ -1,14 +1,15 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {HomeComponent} from "./home/home.component";
+import {MitarbeiterKurzvorstellungComponent} from "./home/mitarbeiter-kurzvorstellung.component";
 import {SkillsComponent} from "./skills/skills.component";
 import {ProjectsDetailsDialogComponent} from "./projects-details-dialog/projects-details-dialog.component";
 import {ProjektListeComponent} from "./projekt-liste/projekt-liste.component";
 import {ProjektComponent} from "./projekt/projekt.component";
+import {SucheComponent} from "./suche/suche.component";
 
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: MitarbeiterKurzvorstellungComponent},
 
   {path: '', redirectTo: 'HomeComponent', pathMatch: 'full'},
 
@@ -17,6 +18,8 @@ const routes: Routes = [
   {path: 'skills', component: SkillsComponent},
 
   {path: 'projects_dialog', component: ProjectsDetailsDialogComponent},
+
+  {path: 'suche', component: SucheComponent},
 
 
 ];

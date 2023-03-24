@@ -13,12 +13,10 @@
   border-radius: 10px;
   word-break: break-word;
   display: block;
-
   overflow: scroll;
-
 }
 
-.change {
+.body {
   border: none;
   margin: 100px;
   margin-bottom: 50px;
@@ -29,16 +27,14 @@
 }
 .bild {
   position: absolute;
-  border-style: groove;
   background-repeat: no-repeat;
   background-position: center;
-  width: 30%;
-  height: 40% ;
+  width: 270px;
+  height: 520px;
   padding: 10px;
-  background-attachment: fixed;
   top: 225px;
-  right: 30%;
-  border-radius: 92px ;
+  right: 40%;
+  radius: 92px;
 }
 
 
